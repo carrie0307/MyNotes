@@ -1,0 +1,54 @@
+results/qq.com.txt
+scan_count=183544,found_count=1018
+time-consuming:866 seconds
+time-consuming:14 minutes
+time-consuming:0 hours
+二级域名数量: 508
+三级域名数量: 428
+四级域名数量: 62
+五级域名数量: 20
+results/qq.com_sfull.txt
+scan_count=340437,found_count=1414
+time-consuming:4444 seconds
+time-consuming:74 minutes
+time-consuming:1 hours
+二级域名数量: 767
+三级域名数量: 549
+四级域名数量: 75
+五级域名数量: 23
+results/qq.com_sfull_nfull.txt
+scan_count=5038530,found_count=2538
+time-consuming:11829 seconds
+time-consuming:197 minutes
+time-consuming:3 hours
+二级域名数量: 772
+三级域名数量: 967
+四级域名数量: 239
+五级域名数量: 560
+results/qq.com_nfull.txt
+scan_count=2959288,found_count=1515
+time-consuming:6520 seconds
+time-consuming:108 minutes
+time-consuming:1 hours
+二级域名数量: 516
+三级域名数量: 818
+四级域名数量: 136
+五级域名数量: 45
+results/qq.com_nfull.txt
+scan_count=61613,found_count=777
+time-consuming:182 seconds
+time-consuming:3 minutes
+time-consuming:0 hours
+二级域名数量: 618
+三级域名数量: 119
+四级域名数量: 4
+五级域名数量: 36
+results/qq.com_nfull.txt
+scan_count=11,found_count=0
+time-consuming:10 seconds
+time-consuming:0 minutes
+time-consuming:0 hours
+二级域名数量: 0
+三级域名数量: 0
+四级域名数量: 0
+五级域名数量: 0

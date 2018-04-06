@@ -1,0 +1,12 @@
+maven.baidu.com
+mbc.baidu.com
+brain.baidu.com
+eqc.baidu.com
+hi.baidu.com
+ip.baidu.com
+mkt.baidu.com
+trade.baidu.com
+vs.baidu.com
+verify.baidu.com
+darwin.baidu.com
+laser.baidu.com

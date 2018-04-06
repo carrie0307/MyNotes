@@ -1,0 +1,43 @@
+results/baidu.com_sfull_nfull.txt
+scan_count=5007246,found_count=2522
+time-consuming:16015 seconds
+time-consuming:266 minutes
+time-consuming:4 hours
+二级域名数量:1712
+三级域名数量:741
+四级域名数量:67
+五级域名数量:3
+results/baidu.com_sfull.txt
+scan_count=450197,found_count=2080
+time-consuming:2565 seconds
+time-consuming:42 minutes
+time-consuming:0 hours
+二级域名数量: 1677
+三级域名数量: 369
+四级域名数量: 31
+五级域名数量: 3results/baidu.com_nfull.txt
+scan_count=3133966,found_count=1605
+time-consuming:7406 seconds
+time-consuming:123 minutes
+time-consuming:2 hours
+二级域名数量: 974
+三级域名数量: 583
+四级域名数量: 36
+五级域名数量: 12
+results/baidu.com.txt
+scan_count=223676,found_count=1262
+time-consuming:677 seconds
+time-consuming:11 minutes
+time-consuming:0 hours
+二级域名数量: 967
+三级域名数量: 279
+四级域名数量: 15
+五级域名数量: 1results/baidu.com_nfull.txt
+scan_count=35828,found_count=12
+time-consuming:3582 seconds
+time-consuming:59 minutes
+time-consuming:0 hours
+二级域名数量: 12
+三级域名数量: 0
+四级域名数量: 0
+五级域名数量: 0

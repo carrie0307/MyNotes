@@ -1,0 +1,10 @@
+1. dns.resolver.Resolver(configure=False
+
+2. # QUESTION:lifetime 与 timeout 什么区别？
+dns.resolver.Resolver.lifetime: The total number of seconds to spend trying to get an answer to the question.
+dns.resolver.Resolver.timeout: The number of seconds to wait for a response from a server, before timing out.
+'''
+
+3. Line 354,357
+
+4. _universal_parsing (sub,ips)什么意思？？？
