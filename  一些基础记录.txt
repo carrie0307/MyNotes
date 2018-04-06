@@ -1,0 +1,76 @@
+VM安装Ubuntu1 http://blog.csdn.net/u013142781/article/details/50529030
+VM安装Ubuntu2 https://jingyan.baidu.com/article/c275f6ba07e269e33d756714.html
+Ubuntu安装VMTools https://jingyan.baidu.com/article/bad08e1ef759f209c85121de.html
+Ubuntu 14.04 LTS中怎样安装fcitx中文输入法 https://jingyan.baidu.com/article/4b07be3c60da3f48b380f3f0.html
+Ubuntu 安装sogo拼音输入法
+快线首页 https://kxway.com/ (登陆后：用户中心-桌面浏览器 下载插件)
+快线chrome插件下载链接 https://kxway.com/guide/chrome
+Axrue下载: http://www.iaxure.com/menupage/download.html
+
+Ubuntu 安装Tensorflow(cpu/gpu) http://blog.csdn.net/jiang_z_q/article/details/73264561
+Ubuntu 安装Tensorflow - gpu http://blog.csdn.net/zhaoyu106/article/details/52793183
+Ubuntu 安装Tensorflow - gpu - 2 https://segmentfault.com/a/1190000008234390
+Ubuntu 16.04 + cuda9.0 https://www.cnblogs.com/iloveblog/p/7683349.html
+Ubuntu16.04+cuda8.0安装教程  http://blog.csdn.net/u010837794/article/details/63251725
+Win10 安装Python https://jingyan.baidu.com/article/0f5fb0993473156d8334eabf.html (https://www.python.org)
+Win10 安装java https://jingyan.baidu.com/article/fea4511a12b158f7bb9125b9.html(http://www.oracle.com/technetwork/java/javase/downloads/index.html) 不要改安装路径就用C盘默认
+
++---------------------------------------------------------------------------------------+
+
+Tensorflow安装：
+
+Win10 安装tensorflow-gpu http://blog.csdn.net/sb19931201/article/details/53648615
+win10+cuda8.0+cudnn+Tensorflow（GPU）安装 http://blog.csdn.net/weixin_36368407/article/details/54177380
+cuda 下载列表 https://developer.nvidia.com/cuda-toolkit-archive
+Ubuntu 安装nvidia驱动之后无法登陆，在lightdm登陆界面循环的问题以及ubuntu下驱动的正确安装方法 http://www.cnblogs.com/misszhu-home/p/5979368.html
+
+
+Win10安装相关
+1 先装tensorflow-gpu,然后通过import tensorflow来看缺少什么(重要！！！这样可以避免下载到版本不匹配的情况)；
+2 可能会显示缺少某个.dll或Visual C++库，这些信息不要忽略，百度/Google查询，下载安装具体缺少的东西即可(注意下载的时候不要下到毒)；
+3 import tensorflow会显示缺少的cuda类型(https://developer.nvidia.com/cuda-toolkit-archive)，一定根据类型来下载；下载后双击安装，选择“精简版”即可；
+注意：安装时选择的路径是“临时解压路径”，安装后会自动删除，实际安装会强制默认安装在C盘：C:\Program Files下可以找到相关内容；
+4 安装cuda后，import tensorflow会显示缺少哪个版本的cudnn,一定下载对应的版本；
+5 将cudnn解压后的/cuda/bin,/cuda/include/,/cuda/lib复制到CUDA_PATH (C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0)
+注：这次安装的时候，cuda自动完成了路径添加，如果以后安装的时候没有自动完成此步骤[tf.Session()(这里会调用cuda)的时候各种lib,dll加载不了]，则手动添加(百度：cuda_path路径添加我的电脑-高级系统设置-高级-环境变量)
+6 import tensorflow as tf  tf.Session()开始测试。
+
++---------------------------------------------------------------------------------------+
+
+Tensorflow资料：
+
+* First Contact With TensorFlow - Jordi Torres - Professor and Researcher at UPC & BSC: Supercomputing for Artificial Intelligence and Deep Learning - http://jorditorres.org/research-teaching/tensorflow/first-contact-with-tensorflow-book/first-contact-with-tensorflow/?utm_source=qq&utm_medium=social
+
+* Tensorflow turtorial: https://github.com/pkmital/tensorflow_tutorials
+
+* 莫烦Python 机器学习: https://morvanzhou.github.io/tutorials/machine-learning/
+
+* tensorflow 白皮书[译] https://www.jianshu.com/p/65dc64e4c81f
+
+* tensorflow 白皮书[英] http://download.tensorflow.org/paper/whitepaper2015.pdf
+
+* 知乎一个帖子： https://www.zhihu.com/question/41667903/answer/99268024?utm_source=qq&utm_medium=social%20%EF%BC%88
+
+* 极客学院人工智能：http://wiki.jikexueyuan.com/list/ai/ (包括tensorflow)
+
+* 自行搜索下载：TensorFlow  Machine Learning Cookbook (pdf)
+
+* 自行搜索下载：TensorFlow for Machine Intelligence   (pdf)
+
+* http://www.tensorfly.cn/tfdoc/get_started/basic_usage.html
+
+* tensorflow如何入门：https://www.zhihu.com/question/49909565
+
+* 一篇整理的文章http://blog.csdn.net/hedoubibi/article/details/77657836 
+
+* 知乎上我的提问：https://www.zhihu.com/question/268708083
+
+* 哈工大社会计算与信息检索研究中心  - Neural Networks and Deep Learning 中文翻译：https://www.gitbook.com/book/hit-scir/neural-networks-and-deep-learning-zh_cn/details
+
+* 深度学习一些文章： http://blog.csdn.net/bixiwen_liu/article/category/6473832/2
+
+* 从神经元到深度学习：https://www.cnblogs.com/subconscious/p/5058741.html
+
+* B站 哲的王 tensorflow
+
+ 
