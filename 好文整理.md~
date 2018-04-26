@@ -16,6 +16,9 @@
 
 * [人工智能辅助威胁情报生产的三个实例](http://www.360doc.cn/mip/571379201.html)
 
+## DNS
+* [DNS威胁与发展分析](http://www.freebuf.com/articles/network/169175.html)
+
 ## IP
 
 * [获取来源IP的正确姿势](http://www.freebuf.com/articles/web/140669.html)
@@ -29,6 +32,7 @@
 * [什么样的爬虫才是好爬虫：Robots.txt解析](http://www.freebuf.com/articles/web/163574.html)
 * [“同形异义字”钓鱼攻击，钉钉中招 ](http://www.freebuf.com/articles/web/136729.html) 
     * 注：包括了有关域名punycode的内容
+* [安全客 - WEB安全日志分析浅析](https://www.anquanke.com/post/id/86305)
 
 ## 比特币
 * [币圈一日，人间十年：黑客想了三刻钟就笑了](http://www.freebuf.com/articles/neopoints/163671.html)
