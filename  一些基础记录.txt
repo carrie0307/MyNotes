@@ -1,4 +1,4 @@
-VM安装Ubuntu1 http://blog.csdn.net/u013142781/article/details/50529030
+﻿VM安装Ubuntu1 http://blog.csdn.net/u013142781/article/details/50529030
 VM安装Ubuntu2 https://jingyan.baidu.com/article/c275f6ba07e269e33d756714.html
 Ubuntu安装VMTools https://jingyan.baidu.com/article/bad08e1ef759f209c85121de.html
 Ubuntu 14.04 LTS中怎样安装fcitx中文输入法 https://jingyan.baidu.com/article/4b07be3c60da3f48b380f3f0.html
@@ -72,5 +72,7 @@ Tensorflow资料：
 * 从神经元到深度学习：https://www.cnblogs.com/subconscious/p/5058741.html
 
 * B站 哲的王 tensorflow
+
+* test
 
  
