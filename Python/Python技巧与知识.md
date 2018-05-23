@@ -2,6 +2,7 @@
 
 * 遍历（列表）
 * 字典
+* 字典和列表输出汉字
 * 线程
 * 文件
 * 时间处理（时间获取、时间运算）
@@ -330,6 +331,16 @@ print data #输出文件内容
 
 #注：以上两个位置输出都可以
 ```
+
+## 列表和字典直接输出中文
+
+* 输出字典
+import json
+print json.dumps(icp_locate_map, encoding="UTF-8", ensure_ascii=False)
+
+* 输出列表
+import json
+print json.dumps(icp_list, encoding="UTF-8", ensure_ascii=False)
 
 ## 线程
 

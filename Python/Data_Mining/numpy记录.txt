@@ -50,7 +50,8 @@ eg. np.arange(6)
 
 
 * np.transpose() # 转置矩阵
-    eg. np.transpose(b)
+    eg. b = np.asarray([1,3,4,6,4,2,5,10,8]).reshape(3,3)
+        np.transpose(b)
     >>> array([[ 1,  6,  5],
                [ 3,  4, 10],
                [ 4,  2,  8]])
@@ -66,3 +67,46 @@ eg. np.arange(6)
 * numpy.equal(x1,x2,out)
     eg. >>> np.equal([1,3,2],np.arange(3))
             array([False, False,  True]) # 对应相等的地方返回True，反之则返回False
+
+* numpu.sum()
+  eg. numpy.sum([[0,1,2],[2,1,3]],axis=1) # axis=1 每一行的全部元素相加
+  >>> array（[3,6]）
+
+  eg. numpy.sum([[0,1,2],[2,1,3]],axis=0) # axis=0 每一列的全部元素相加
+  >>> array（2,2,5）
+
+
+* tile函数
+  eg. tile(1,2)
+      >>> array([1, 1])
+  eg. tile((1,2,3),3)
+      >>>  array([1, 2, 3, 1, 2, 3, 1, 2, 3])
+  eg. b=[1,3,5] 
+     tile(b,[2,3])
+       >>> array([[1, 3, 5, 1, 3, 5, 1, 3, 5],
+                  [1, 3, 5, 1, 3, 5, 1, 3, 5]
+                ])
+  eg. a=[[1,2,3],[5,4]]
+      tile(a,[2,3])
+       >>> array([[[1, 2, 3], [5, 4], [1, 2, 3], [5, 4], [1, 2, 3], [5, 4]],
+                [[1, 2, 3], [5, 4], [1, 2, 3], [5, 4], [1, 2, 3], [5, 4]]])
+
+
+* numpy. argsort()
+    eg. x = np.array([3, 1, 2])
+         np.argsort(x)
+    >>> array([1, 2, 0]) #  返回数组从小到大的索引值
+
+
+    eg. x = np.array([[0, 3], [2, 2]])
+        np.argsort(x, axis=0) #按列排序
+    >>> array([[0, 1], [1, 0]])
+    
+     np.argsort(x, axis=1) #按行排序
+    >>> array([[0, 1],[0, 1]])
+
+* numpy.mat
+   将目标数据的类型转化为矩阵matrix
+   eg. a = [[1,2,3,],[2,4,6,],]
+       myMat = numpy.mat(a)
+    >>> matrix([[1,2,3],[2,4,6]]) #转化为了矩阵
