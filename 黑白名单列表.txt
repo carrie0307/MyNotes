@@ -1,4 +1,4 @@
-黑名单
+﻿黑名单
 http://malwaredomainlist.com
 http://malwaredomains.com
 http://www.spamhaus.org/zen/
@@ -6,6 +6,9 @@ https://www.spamhaus.org/sbl/
 http://www.hosts-file.net/
 http://www.phisntank.com
 https://zeustracker.abuse.ch/ (Zeus IP & domain name block list)
+http://data.netlab.360.com/feeds/dga/dga.txt
+http://osint.bambenekconsulting.com/feeds
+
 
 
 白名单
@@ -69,20 +72,5 @@ https://www.domaining.com
 
 Free Online Tools for Looking up Potentially Malicious Websites
 http://www.isithacked.com/
-
-=========================================================================
-IP定位
-https://whatismyipaddress.com/ 
-
-IP黑名单(域名与IP的对应)：
-http://dn-mwsl-hosts.qbox.me/hosts.txt
-
-
-==============================================================================
-https://www.rbls.org  输入霉或IP,查询是否被列入了某黑名单以及相关概要信息
-https://www.spamhaus.org 应该是列出了一些被屏蔽邮件服务器IP,不确定(没有完全读懂)
-http://www.surbl.org/  lists of web sites that have appeared in unsolicited messages
-
-
 
 
