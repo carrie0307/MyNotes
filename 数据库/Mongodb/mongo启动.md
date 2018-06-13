@@ -51,3 +51,9 @@ http://blog.csdn.net/wangqing_12345/article/details/77527182
 
 * [官网对各参数定义](https://docs.mongodb.com/manual/reference/configuration-options/)。比较建议以官网信息为主，尤其是格式和参数名称(这次遇到的问题:"bind_ip"的写法已经不是"bind_ip",而是"bindIp",这一改变mongd --help没有列出，但官网文档是有的)
 
+
+## 另外
+* 关于之前屡次重启失败在日志中找到的记录"shuting down with code 62"，解决方案来自https://stackoverflow.com/questions/47850004/mongodb-shutting-down-with-code62
+
+* mongo官方对于各种异常code的说明:https://docs.mongodb.com/manual/reference/exit-codes/
+
