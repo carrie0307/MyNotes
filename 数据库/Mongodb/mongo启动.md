@@ -35,9 +35,9 @@ http://blog.csdn.net/wangqing_12345/article/details/77527182
 
 虽然这次恢复失败了，但是找到两篇可参考的文章，记录如下
 
-* mongodb数据恢复 [图片]https://ruby-china.org/topics/16432
+* mongodb数据恢复https://ruby-china.org/topics/16432
 
-* mongo数据文件备份与恢复 [图片]https://blog.csdn.net/shmnh/article/details/41921979
+* mongo数据文件备份与恢复https://blog.csdn.net/shmnh/article/details/41921979
 
 ## 关于Mongo自动化备份
 
