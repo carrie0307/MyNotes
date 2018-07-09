@@ -1,4 +1,4 @@
-﻿VM安装Ubuntu1 http://blog.csdn.net/u013142781/article/details/50529030
+VM安装Ubuntu1 http://blog.csdn.net/u013142781/article/details/50529030
 VM安装Ubuntu2 https://jingyan.baidu.com/article/c275f6ba07e269e33d756714.html
 Ubuntu安装VMTools https://jingyan.baidu.com/article/bad08e1ef759f209c85121de.html
 Ubuntu 14.04 LTS中怎样安装fcitx中文输入法 https://jingyan.baidu.com/article/4b07be3c60da3f48b380f3f0.html
@@ -17,7 +17,9 @@ Ubuntu16.04+cuda8.0安装教程  http://blog.csdn.net/u010837794/article/details
 Linux按照选卡驱动 https://blog.csdn.net/huanbia/article/details/74181078
 
 Win10 安装Python https://jingyan.baidu.com/article/0f5fb0993473156d8334eabf.html (https://www.python.org)
-Win10 安装java https://jingyan.baidu.com/article/fea4511a12b158f7bb9125b9.html(http://www.oracle.com/technetwork/java/javase/downloads/index.html) 不要改安装路径就用C盘默认
+Win10安装Python后系统变量设置  https://www.cnblogs.com/dangeal/p/5455005.html
+Win10 安装java https://jingyan.baidu.com/article/fea4511a12b158f7bb9125b9.html(http://www.oracle.com/technetwork/java/javase/downloads/index.html) 最开始一个路径选择不要修改路径直接用C盘默认
+Win10安装Git后的配置 https://blog.csdn.net/m0_37852904/article/details/79198640
 
 +---------------------------------------------------------------------------------------+
 
@@ -35,6 +37,7 @@ Win10安装相关
 3 import tensorflow会显示缺少的cuda类型(https://developer.nvidia.com/cuda-toolkit-archive)，一定根据类型来下载；下载后双击安装，选择“精简版”即可；
 注意：安装时选择的路径是“临时解压路径”，安装后会自动删除，实际安装会强制默认安装在C盘：C:\Program Files下可以找到相关内容；
 4 安装cuda后，import tensorflow会显示缺少哪个版本的cudnn,一定下载对应的版本；
+[问题:这次安装cuda后，出现了could not find cudar64_90的错误，原因在于没有配置好%path%，具体参见https://blog.csdn.net/akon_wang_hkbu/article/details/78478513，在环境变量中加上bin/和lib/x64的路径；添加后通过echo %path%查看，必要时进行重启]
 5 将cudnn解压后的/cuda/bin,/cuda/include/,/cuda/lib复制到CUDA_PATH (C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0)[cudnn:https://developer.nvidia.com/rdp/cudnn-download,https://developer.nvidia.com/rdp/cudnn-archive]
 注：这次安装的时候，cuda自动完成了路径添加，如果以后安装的时候没有自动完成此步骤[tf.Session()(这里会调用cuda)的时候各种lib,dll加载不了]，则手动添加(百度：cuda_path路径添加我的电脑-高级系统设置-高级-环境变量)
 6 import tensorflow as tf  tf.Session()开始测试。
@@ -84,7 +87,7 @@ Tensorflow资料：
 
 +----------------------------------------------------------------------------------------------------------
 Kali安装：
-镜像下载：通过“HTTP”链接下载普通.ios即可
+镜像下载：https://www.kali.org/downloads/ 通过“HTTP”链接下载普通.ios即可
 MV下安装：https://blog.csdn.net/since_1904/article/details/70980109
 Kali安装源配置: https://blog.csdn.net/Root__Yang/article/details/53026685
 
