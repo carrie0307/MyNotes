@@ -30,7 +30,12 @@
 * VEFY命令
 根据指令格式，**VEFY 邮箱用户名**(eg.VERY tom@163.com)即可进行邮箱验证，但总是返回**502 Command not Implemented**。后来在一篇文章读到，出于安全起见服务器常会屏蔽VEFY命令，这应该是返回502的原因。
 
-## 其他
+### 补充
+RYX邮箱有效性验证代码的学习，具体见https://github.com/carrie0307/MyNotes/blob/master/Python/%E4%BB%96%E4%BA%BA%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A0/email_verify_single_ryx.py。
+
+这里一方面用了发送邮件通过返回异常的情况进行判断(根据论文，当代码捕获到SMTP异常时，对应SMTP服务器返回的550错误。)；另一方面用了“退信”机制来判断。
+
+### 其他
 * 与SMTP服务器交互时，注意服务器返回码的含义；
 
 * 在命令行中与SMTP服务器交互时，命令不可更改，不可重输；因此建议将要输入的内容先写入文档中，然后直接进行粘贴即可。
