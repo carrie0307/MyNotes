@@ -11,13 +11,13 @@
 
 * [scikit-learn:CountVectorizer提取tf都做了什么](https://blog.csdn.net/mmc2015/article/details/46866537)
 
-* [counterVectorizer与TfiefTransformer使用案例](http://ilioner.github.io/2017/10/23/sklearn%E4%B8%ADCountVectorizer%E4%B8%8ETfidfTransformer%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B.html)
+* [counterVectorizer与TfiefTransformer使用案例](https://blog.csdn.net/m0_37324740/article/details/79411651)
 
 ## 核心函数
 
 * CountVectorizer() // 提取词袋模型
 
-* TfidfTransformer() // 计算Tf-idf
+* TfidfTransformer() // 提取tf-idf模型
 
 * TfidfVectorizer() = CountVectorizer() + TfidfTransformer()
 
