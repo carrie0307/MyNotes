@@ -1,5 +1,8 @@
 # -*- coding:utf-8 -*-
 """
+对文档进行词袋模型和tfidf模型编码；
+gensim.word2vec的一些基本函数(https://blog.csdn.net/MebiuW/article/details/52303622)
+
 词向量：来自词汇表的单词或短语被映射到实数的向量
 注意区分词向量和借助词向量将一个句子或文档向量化
 """
@@ -77,8 +80,15 @@ def useWord2Vec(textLines):
     
     word_corpus = [list(jieba.cut(line)) for line in textLines]
     model = Word2Vec(word_corpus, min_count=1)  # 默认window=5
+    # 1. 获取两个词之间的相似度
     print (model.similarity('北京', '天安门'))
+    # 2. 获取某个词的词向量
     print (model['北京'])
+    # 3. 使用某些词语来限定，分正向和负向(例如下例的含义是，与'北京', '天安门'最相似，与'清华大学']最不相似的)
+    model.most_similar(positive=['北京', '天安门'], negative=['清华大学'])
+    # 4. 从一堆词里面找到不匹配的
+    print ("北京 天安门 网易 , 有哪个是不匹配的? word2vec结果说是:"+model.doesnt_match("北京 天安门 网易".split()))
+    # 可参见https://blog.csdn.net/MebiuW/article/details/52303622
     
 
 if __name__ == '__main__':
