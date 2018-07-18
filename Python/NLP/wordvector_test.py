@@ -11,7 +11,6 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction.text import CountVectorizer
 import jieba
 from gensim.models import word2vec
-from gensim.models import Word2Vec
 
 corpus = ["我来到北京清华大学北京",
 	    "他来到了网易杭研大厦",
@@ -69,7 +68,7 @@ def useWord2Vec(textLines):
     # Word2Vec()参数解释:https://blog.csdn.net/mpk_no1/article/details/72510655
     # 训练一个Word2Vec模型
     """处理英文"""
-    model_en = Word2Vec(en_corpus, min_count=1)
+    model_en = word2vec.Word2Vec(en_corpus, min_count=1)
     print (model_en.similarity('Beijing', 'Hangzhou'))
     print (model_en['Beijing'])
 
@@ -79,7 +78,7 @@ def useWord2Vec(textLines):
     # model = word2vec.load("D:/data/wiki2vector/en_1000_no_stem/en.model")
     
     word_corpus = [list(jieba.cut(line)) for line in textLines]
-    model = Word2Vec(word_corpus, min_count=1)  # 默认window=5
+    model = word2vec.Word2Vec(word_corpus, min_count=1)  # 默认window=5
     # 1. 获取两个词之间的相似度
     print (model.similarity('北京', '天安门'))
     # 2. 获取某个词的词向量
@@ -89,6 +88,8 @@ def useWord2Vec(textLines):
     # 4. 从一堆词里面找到不匹配的
     print ("北京 天安门 网易 , 有哪个是不匹配的? word2vec结果说是:"+model.doesnt_match("北京 天安门 网易".split()))
     # 可参见https://blog.csdn.net/MebiuW/article/details/52303622
+
+    # 注意https://github.com/fishyyh/CNN-SQL/blob/master/word.py，在model.build_vocab()才加上了sentences参数， model = word2vec.Word2Vec并未添加sentence语料
     
 
 if __name__ == '__main__':
