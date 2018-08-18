@@ -1,8 +1,10 @@
-VM安装Ubuntu1 http://blog.csdn.net/u013142781/article/details/50529030
+VM安装Ubuntu1 http://blog.csdn.net/u013142781/article/details/50529030 (注意：一定要下载官网最新的Ubuntu,否则很多功能无法正常进行)
 VM安装Ubuntu2 https://jingyan.baidu.com/article/c275f6ba07e269e33d756714.html
 Ubuntu安装VMTools https://jingyan.baidu.com/article/bad08e1ef759f209c85121de.html
+
 Ubuntu 14.04 LTS中怎样安装fcitx中文输入法 https://jingyan.baidu.com/article/4b07be3c60da3f48b380f3f0.html
-Ubuntu 安装sogo拼音输入法
+注意，当打开fcitx的input configuration界面后，如果找不到拼音输入法，则点击窗口下方的加号进行添加
+
 快线首页 https://kxway.com/ (登陆后：用户中心-桌面浏览器 下载插件)
 快线chrome插件下载链接 https://kxway.com/guide/chrome
 
