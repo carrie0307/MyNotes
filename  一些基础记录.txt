@@ -28,6 +28,8 @@ Win10安装Python后系统变量设置  https://www.cnblogs.com/dangeal/p/545500
 Win10 安装java https://jingyan.baidu.com/article/fea4511a12b158f7bb9125b9.html(http://www.oracle.com/technetwork/java/javase/downloads/index.html) 最开始一个路径选择不要修改路径直接用C盘默认
 Win10安装Git后的配置 https://blog.csdn.net/m0_37852904/article/details/79198640
 
+Ubuntu Python3.4升Python3.6:https://blog.csdn.net/u012551524/article/details/80419441
+
 +---------------------------------------------------------------------------------------+
 
 Tensorflow安装：
