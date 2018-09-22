@@ -1,0 +1,38 @@
+In [272]: df2=DataFrame(np.arange(16).reshape((4,4)),index=['a','b','c','d'],columns=['one','two','three','four'])
+ 
+
+Out[273]: 
+   one  two  three  four
+a    0    1      2     3
+b    4    5      6     7
+c    8    9     10    11
+d   12   13     14    15
+
+
+
+>>> type(df2['one'])
+<class 'pandas.core.series.Series'>
+
+>>> type(df2['one'].values)
+<class 'numpy.ndarray'>
+
+>>> type(df2[['one']])
+<class 'pandas.core.frame.DataFrame'>
+
+>>> df2.iterrows()
+ for i in df2.iterrows():
+...  print (i[0], i[1]['one'], i[1]['two'], i[1]['three'])
+
+>>> df2.values
+array([[99,  1,  2,  3],
+       [ 4,  5,  6,  7],
+       [ 8,  9, 10, 11],
+       [12, 13, 14, 15]])
+
+
+# index为'a'的样本的one列置为99
+>>> df2.loc[df2.index == 'a', 'one'] = 99
+
+>>> x = np.array([[1, 2], [3, 4]])
+>>> x.ravel()
+array([1, 2, 3, 4])

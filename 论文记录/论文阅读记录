@@ -19,7 +19,8 @@ S3. 评价对象聚类
 
 根据结果来看，这篇文章主要是研究：针对某一话题下的微博，消极与积极的比例，以及每一条具有主观感情的微博的评价对象有哪些(例如图5-5)
 
-## Deep Fingerprinting Undermining website fingerprinting(CCS2018)
+
+## CCS2018 - Deep Fingerprinting Undermining website fingerprinting
 
 * 首先要明确Website Fingerprinting的概念：用户为了隐私会选用Tor来隐藏自己真是访问的网站及行为，在此情况下，攻击者通过Website Fingerprinting来打破Tor的保护，来发现用户真实访问的网站和真实行为。
 
@@ -32,3 +33,32 @@ S3. 评价对象聚类
 * 文中提到了AutoEncode，这个以后要学习。
 
 * 文章详细讲了数据的收集，以及closed与open两类数据的情况。
+
+
+## USENIX2018 - Who Is answering My Queries:understand and characterizing Interception of the DNS Resolution Path(纸质)
+
+* 提出了，当用户自己设定了递归DNS服务器时(如8.8.8.8),其向8.8.8.8的请求会被某个alternative DNS resolver阶段，之后的操作都是由alternative DNS resolver进行的。
+
+* 然后研究了 **发起请求用户的AS分布**，**被intercepted的公共DNS的AS分布**和**alternative DNS resolver的ASf分布**.
+
+* 注意在**Our Approach**中提出的**如何检测出DNS数据包被截断的方法**
+
+* DNS intercepte的好处是
+   
+   * improve the performance of DNS Lookup(减少RTT)
+
+   * 提高“安全性”,alternative DNS resolver是被(ISP)信任的DNS服务器
+
+   * Reduce financial settlement
+
+## NDSS2018 - Kitsune : An Ensemble of Autoencoders for Online Network Intrusion Detection
+
+* **具体没看懂，只整理下来大概**
+
+* 核心:对神经网络进行集成以实现入侵检测(an ensemble of neural networks)
+
+* 优点:可以进行**无监督学习训练**。反之，有监督训练只能再已打好标的数据进行，是一种closed-world approach，对训练集中未出现过的数据无法很好预测的缺点。
+
+* Kitsune的异常检测算法KitNET有一个主要的参数：the maxinum number of inputs
+
+* Feature Map和 Anomaly Detector 细节没有看很懂，感觉是深度学习基础不够
