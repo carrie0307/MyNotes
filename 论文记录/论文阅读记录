@@ -62,3 +62,39 @@ S3. 评价对象聚类
 * Kitsune的异常检测算法KitNET有一个主要的参数：the maxinum number of inputs
 
 * Feature Map和 Anomaly Detector 细节没有看很懂，感觉是深度学习基础不够
+
+## NDSS2018 - Feature Squeezing: Detecting Adversarial Examples in Deep Neural Networks
+
+* 本文主要讲述了检测神经网络训练样本中的adversarial examples
+
+* 进行此研究的原因：
+
+    * 通过发现Adversarial Samples发现背后的攻击者
+
+    * 排除出adversarial samples / input
+
+    * adversarial samples 可能使benign samples 被预测为malicious
+
+* 一般的对抗方法
+
+    * Adversarial Training: the model will learn how to restore the ground truth from the adversarial perturbations and perform robustly on the future adversarial examples
+
+    * Gradient Masking： reduce the sensivity of DNN models to small changes in inputs
+
+    * Input Transformation: reduce the model sensitivity to small input changes by transforming the inputs
+
+* 一般检测Adversarial Examples的方法：
+
+    * Sample statistic: 通过正负样本统计进行，但这一方法需要大量的正负样本为基础；
+
+    * Training a Detector: 通过负样本训练一个负样本检测分类器，但缺点是这种方法需要以大量adversarial samples为基础；
+
+    * Prediction Inconsistency： the basic idea of prediction inconsistency is to measure hte disagreement among several models in predicting an unknown input, since one adversarial example may not fool every DNN model.
+
+* 本文提出的方法：
+
+    * reducing color bit depth (这一方法应该是针对图像？？)
+
+    * spatial smoothing
+
+* 本文实验数据：MNIST数据集，CIFAR-10, ImageNet
