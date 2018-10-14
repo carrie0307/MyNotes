@@ -98,3 +98,61 @@ S3. 评价对象聚类
     * spatial smoothing
 
 * 本文实验数据：MNIST数据集，CIFAR-10, ImageNet
+
+
+## RAID2018 - DNS Unchained: Amplified Application-Layer Dos Attacks Against DNS Authoritatives
+
+* 本文提出了新的几种在application-level针对DNS 权威服务器的攻击方法，并总结了可行的解决方案
+
+* 传统针对DNS的DDOS攻击：DNS Water Tortue attacks
+    * DNS Water Tortue attacks -- also known as random prefix attacks -- flood the victim's DNS servers with requests such that the server runs out of resources to respond to benign queries.
+
+    * 这一攻击的缺陷是：
+        * the attack traffic show exceptionally high failure rates for particular domains
+
+        * the attacks provide no amplification, as every query by the attacker eventually results in only a single query to target ANS -- unless queries are resent in case of packet loss.
+
+* New DDos
+
+    * 利用CNAME的“链式”解析或者说递归解析，使递归不断向同一DNS权威服务器发起请求；
+
+    * 修改TTL使cache很快消失， 递归服务器不断向权威服务器发起请求；
+
+    * DNAME：类似CNAME链式解析的原理。DNAME也是一种资源记录，具体可见此文https://ssorc.tw/994或RFC文档
+
+* 对抗New DDos的方法
+
+    * 通过Zone Files检测出CNAME
+
+    * TTL值
+
+    * 限制RRL: 限制某个client IP 接收 DNS响应的频率 / 限制ANS 进行DNS响应的频率
+
+    * Back-off Strategy:give loaded ANS time to recover
+
+    * 限制递归查询深度(针对CNAME和DNAME)
+
+
+## NDSS2015 - NDSS2015-Parking Sensors Analyzing and Detecting Parked Domains
+
+* 提出了检测Parked domains的方法
+
+* 文中首先介绍了常见的Parked domains的目的，产生方式等
+
+* 抽取特征，通过Random Forest进行检测
+
+* Paper代码https://github.com/kdsec/Domain-Parking-Sensors，但是并没有包括模型训练部分的代码，可详细看看typosqlating domains的产生方法。
+
+## Var-CNN and DynaFlow: Improved Attacks and Defenses for Website Fingerprinting
+
+* the crontributions of the paper:
+
+    * Coming up with Var CNN which can extract features automatically 
+
+    * Coming up with a new Defense --- DyanFlow
+
+* The code of the paper: https://github.com/lsvih/Var-CNN--DynaFlow
+
+* 文章大致浏览，主要在看代码。https://github.com/lsvih/Var-CNN--DynaFlow/blob/master/var_cnn_ensemble.py是利用Keras的CNN。疑问是，一般是通过model.add()来添加卷积层、池化层(model.add(MaxPooling1D(...)))等，而此文中则是model = MaxPooling1D()(model)的方法。
+
+## 

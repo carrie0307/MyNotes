@@ -18,8 +18,8 @@
 
 * 然后开始运行，如果本地代码还没有同步到Map Path，则会显示“ Python helpers are not copied yet to the remote host. Please wait until remote interpreter initialization finishes. ” ， 需等待上传完成。
 
-* 当profect较大时，可先通过其他方式将代码上传到指定路径；之后每次运行的时候都是将修改的内容进行自动的增量上传即可。
+* 当profect较大时，可先将较大的且之后不再变化的文件(例如训练集等)通过其他方式将代码上传到指定路径；之后每次运行的时候都是将修改的内容进行自动的增量上传即可(注意观察底部“Uploading ”的提示)，或通过右键文件“Upload to”进行上传。
 
 * 注意在deployment的option里选择 “每次 Ctrl S 自动上传同步”
 
-* 以后用pycharm打开其他新project可能会要求选择interpret,根据需求选择本地或远程Interpret即可。
+* 以后用pycharm打开其他新project可能会要求选择interpret,根据需求选择本地或远程Interpret即可。注意调整deployment中的上传同步选项。

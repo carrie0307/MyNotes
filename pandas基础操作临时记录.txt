@@ -60,4 +60,32 @@ xgb.Dmatrix接收的是np.array数据类型
 
 get_dummy 得到的是 dataframe
 
+>>> df2=pd.DataFrame(np.arange(16).reshape((4,4)),index=['a','b','c','d'],columns=['one','two','three','four'])
+    df3=pd.DataFrame(np.arange(16).reshape((4,4)),index=['a','b','c','d'],columns=['five','sex','seven','eight'])
+>>pd.concat([df2,df3],axis=1) # 横向连接
+   one  two  three  four  five  sex  seven  eight
+a    0    1      2     3     0    1      2      3
+b    4    5      6     7     4    5      6      7
+c    8    9     10    11     8    9     10     11
+d   12   13     14    15    12   13     14     15
 
+>>pd.concat([df2,df3]) # 相同字段拼接
+   eight  five  four   one  seven   sex  three   two
+a    NaN   NaN   3.0   0.0    NaN   NaN    2.0   1.0
+b    NaN   NaN   7.0   4.0    NaN   NaN    6.0   5.0
+c    NaN   NaN  11.0   8.0    NaN   NaN   10.0   9.0
+d    NaN   NaN  15.0  12.0    NaN   NaN   14.0  13.0
+a    3.0   0.0   NaN   NaN    2.0   1.0    NaN   NaN
+b    7.0   4.0   NaN   NaN    6.0   5.0    NaN   NaN
+c   11.0   8.0   NaN   NaN   10.0   9.0    NaN   NaN
+d   15.0  12.0   NaN   NaN   14.0  13.0    NaN   NaN
+
+
+
+>>> df1=pd.DataFrame({'key':['a','b','b'],'data1':range(3)})
+>>> df4=pd.DataFrame({'key':['a','b','c'],'data2':range(4,7)})
+>>> df4
+  key  data2
+0   a      4
+1   b      5
+2   c      6
