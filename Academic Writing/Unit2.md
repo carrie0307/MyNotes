@@ -15,7 +15,7 @@
 
     * Opening with General Statements: can include statements of FACT or TOPIC(True or False).general statement assessible for both expert and non-expert.
 
-    the begining shouldn't be too difficule. It should be easy and interesting to "ease" your reader into writing.
+        * the begining shouldn't be too difficule. It should be easy and interesting to "ease" your reader into writing.
 
     * Opening with Definitions:definitions often more technical than general statements.
 
@@ -26,9 +26,9 @@
 
 ### Specifit ot General Structore: Specific/Narrow statement - Elaboration on statement - Broad Context - Concluding Generalization
 
-    * End of Abstract 
+* End of Abstract 
 
-    * End of Discussion section
+* End of Discussion section
 
 ### Summary 
 
@@ -123,9 +123,9 @@
 
 * Recently, researchers have made significant progress in overcoming this difficulty by ...
 
-##2.4 Process
+## 2.4 Process
 
-Precess Structure
+### Precess Structure
 
 
 * Methods section of your manuscript ALL about Process
@@ -135,9 +135,9 @@ Precess Structure
 
 ### Process descriptions:
 
-    * describing the parts of a process as the steps required to provide a solution
+* describing the parts of a process as the steps required to provide a solution
 
-    * problem described in terms of a process
+* problem described in terms of a process
 
 ### Flow of Ideas (In Unit3)
 

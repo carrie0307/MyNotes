@@ -143,6 +143,30 @@ S3. 评价对象聚类
 
 * Paper代码https://github.com/kdsec/Domain-Parking-Sensors，但是并没有包括模型训练部分的代码，可详细看看typosqlating domains的产生方法。
 
+### 关于特征，主要分为四类
+
+* HTML Features:HTML features are extracted from the source code of every load frame so that we can we can analyze the content and the scripts deployed on the page.
+
+    * **Average and maximum link length**, **Averate source and external source ratio**, **External link and external source ratio**, **website director presence**, etc.
+
+* HAR features:these features are derived from the HTTP archive that is constructed while loading a page and we focus on the characteristics of HTTP requests.
+
+    * HAR: HTTP Archive, a JSON formatted archive file for logging of a website's interaction with a site.
+
+    * the features such as **third-party requests ratio**, **third-party data ratio**, **Initial response size and ratio**, etc.
+
+* Domain name feature: focus on characteristics inffered from domain name itself, especially **typosquatting doamins**.
+
+* Frame Features: the features which are extracted by tracking every loaded frame on the webpage
+    
+    * such as **amount of frames**, **main frame and iframe redirections**, **different final domains**
+
+* 补充:the NS or CNAME of domain: Parking domains' NS or CNAME is commonly set to parking services.
+
+* Ecosystem of Domain Parking
+
+![](http://ouzh4pejg.bkt.clouddn.com/ecosystem%20of%20domain%20parking.png)
+
 ## Var-CNN and DynaFlow: Improved Attacks and Defenses for Website Fingerprinting
 
 * the crontributions of the paper:
@@ -155,4 +179,61 @@ S3. 评价对象聚类
 
 * 文章大致浏览，主要在看代码。https://github.com/lsvih/Var-CNN--DynaFlow/blob/master/var_cnn_ensemble.py是利用Keras的CNN。疑问是，一般是通过model.add()来添加卷积层、池化层(model.add(MaxPooling1D(...)))等，而此文中则是model = MaxPooling1D()(model)的方法。
 
-## 
+## USENIX2014 - Understanding the dark side of Domain Parking
+
+* the contributions of the papper:
+
+    * The paper performed the first systematic study of ilicit study of illicit activities in parked domain monetization and infiltrated domian parking services and collect a set of complete monetization chasins.
+
+    * confirm the presence of illegitimate operations including **click fraud**, **traffic spam** and **traffic stealing**.
+
+    * reveal the pervasiveness of those activities which affect most leading parking service providers and attribute it to account for up to 40% of total revenue.
+
+    * the discovery of unique feature of illicit activities and their relations with different monetization strategies and parking service syndicates.
+
+
+### 
+
+* The most monnon way for setting a domain for parking is through te DNS, in which the parked domain's NS or CNAME is set to point to that of parking service.
+
+* Monitization option
+
+    * Search advertising: (没看懂。。。)
+
+    * PPC(pay-per-click): Once the domain is clicked, the owner woule get the profie.
+
+    * Direct Navigation Traffic(PPR, pay-per-redirection): Direct Navigation traffic is generated when the web user enters a domain name as a query and exptects to be redirected to a related domain.
+
+* 其他部分文章分析了Parking domain获利的ecosystem,不进行细致整理，整理一些新的概念；
+
+* Click fraud: 
+
+* Traffic Spam: Purchsing campaigns recieved 306 traffic hits from our crawler through domains parked with parking services.(我的理解：通过parking domains为特定组织的站点提升访问流量，即凡对parking domain进行访问的，访问量均将被记录的特定站点的访问量里面)
+
+* Traffic Stealing: Occasionally parking services were found to be dishonest with domain owners, failing to inform them for part of the revenue they were supposed to share with the owners.
+
+### Fingerprinting Monetization Chains
+
+The paper developed a technique that fingerprints the monetization options observed on seed chains.
+
+* Method
+
+    * The idea: The problem of detecting illegitimate operations comes down to identifying the monetization options they involved. 
+        * The paper found that the sequence of URL patterns can be used to determine the presence of a monetizaation option. (The details can be found in the paragraph of 4.1-The idea.)
+
+    * URL-IP Cluster(UIC) generation: An ad network can have many affiliated websites and each site may have multiple domains and IP addresses. A UIC includes a set of IP addresses for related hosts and the invariant part of the URL(without the host name) across all members in the cluster.
+
+
+## ICML2018-Ultra Large-Scale Feature Selection using Count-Sketches
+
+一篇人工智能A类，具体没有太看懂，但几类几个新概念
+
+* Feature Hashing: 特征哈希法的目标是把原始的高位特征向量压缩成较低维特征向量，且进来不损失原始特征的表达能力。
+
+* Greedy threshholding: 用贪心算法的思想选择阈值？？
+
+* SGD(Stochastic gradient descent):随机梯度下降，每次随机选择一个样本进行训练。
+
+* IHT(Iterative hard threshholding):迭代硬阈值，
+
+* Count Sketch:一种算法，具体可Google
