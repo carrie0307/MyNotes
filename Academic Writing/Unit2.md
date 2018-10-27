@@ -167,13 +167,13 @@
 
 ### apart from logical connectors(however, furthermore, nevertheless)
 
-    * progression from old/given/well-known information to new information
+* progression from old/given/well-known information to new information
 
-    * start with familiar information
+* start with familiar information
 
-    * repeat key words to tie toghther two sentences
+* repeat key words to tie toghther two sentences
 
-    * use of passive voice
+* use of passive voice
 
 ### Summary
 
