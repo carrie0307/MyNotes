@@ -9,3 +9,5 @@
 * Flow            How does my writing flow ??
 
 * Presentation    How should I present ??
+
+http://www.writersdiet.com

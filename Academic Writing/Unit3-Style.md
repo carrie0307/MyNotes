@@ -164,3 +164,93 @@ Run-on Expressions: etc.; and so on; and so forth;
 | These semiconductors are put into mobile phones, TVs, robots **etc**. | These semiconductors are used in mobile phones, TVs, robots **and other** electronic devices. |
 | Micropumps can be used in drug delivery, lab-on-a-chip analysis, **and so forth** | Micropumps can be used in drup delivery, lab-on-a-chip analysis, **and similar** specialized applications requiring self-contained pumps. |
 
+## 3.8 Contractions
+
+Contractions(indicated by apostrophe)
+
+Examples: can't, couldn't, shouldn't, wouldn't, mustn't, aren't, isn't, ins't, weren't
+
+Common in popular essayes but not original scientific essays.
+
+### Examples
+
+| informal        | formal    | 
+| :----- | :----|
+| Export figures **won't** imporve this year. | Export figures **will not** imporve this year..|
+| Our result **didn't** match previous reports. | TOur result **did not** match previous reports. |
+| This essay **couldn't** detect the porteins.  |This essay **could not** detect the porteins.  |
+
+
+### TIPs：Avoid apostrophes altogether;even when indicating possession
+
+* Example
+
+    * The use of this irrigation methor was the local **people's** choice.
+
+    * The use of this irrigation methor was the choice **of the local people**.
+
+### Choose the more formal negative form
+
+| informal        | formal    | 
+| :----- | :----|
+| This analysis **did not get us** any new results. | This analysis **yield no** new results.|
+| The goverment **did not allocate** much funding for the program. | The government allocated **little funding** for the program. |
+| This problem **dose not** have many viable solutions.  |The problem **has few** viable solutions.  |
+
+## 3.9 Pronouns
+
+### Use of the personal pronoun 'I'
+
+| informal        | formal    | 
+| :----- | :----|
+| In this paper **I argue** that small incentives result in greater participation in surveys.| **This paper augues** that small incentives result in greater participation in surveys.|
+
+### Use of the personal pronouns 'We/Our'
+
+* 'We/Our' now widely accepted in acdemic writing
+
+* In this paper **we argue** that small incentives result in greater participation in surveys.
+
+* **Our results strongly suggest** that small incentives result in greater participation in surveys.
+
+### Use of the personal pronoun 'You'
+
+| informal        | formal    | 
+| :----- | :----|
+| You can see the results in Table 1| The results can be seen in Table 1. <br> The results are shown/listed in Table 1.
+|
+
+
+## 3.10 Question
+
+Avoid using direct questions: Why? What? When? Where? How? Does... 
+
+### Change direct questions into indirect questions: ...whether...;...how...;...why...;...what...
+
+* Example
+
+| informal        | formal    | 
+| :----- | :----|
+| **What** can be done to lower the costs for patients?| **It is necessary to consider** how costs for patients may be lower.|
+| **Does** this fit with a previously proposed model?| **Next, we considered** whether our results fit into a previously proposed model.|
+
+### Avoid using direct questions: usually more than one choice
+
+* **Why** has antibiotic resistance increased in the past decade?
+
+    * **Several studied have investigaged** why antibiotic resistance has increased in the past decade.
+
+    * **It is important to understand** why antibiotic resistance has increased in the pase decade.
+
+## 3.11 Economic use
+
+Economic Use of Words: use as many as words to express your ideas? or as few as words to express ? 
+
+Example:
+
+| informal        | formal    | 
+| :----- | :----|
+| There are some materials of inorganic origin that can be used by bioengineers in the process of tissue engineering that have been shown to be very promising indeed.| Certain inorganic materials have shown potential for tissue engineering.|
+
+
+there is; a lot of; lots of;some; 

@@ -8,6 +8,7 @@ http://www.phisntank.com
 https://zeustracker.abuse.ch/ (Zeus IP & domain name block list)
 http://data.netlab.360.com/feeds/dga/dga.txt
 http://osint.bambenekconsulting.com/feeds
+DGA archive: https://dgarchive.caad.fkie.fraunhofer.de/ (需要联络管理员获取账号)
 
 
 

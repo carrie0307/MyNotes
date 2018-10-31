@@ -23,6 +23,8 @@ print (os.path.join(vfile,'root'))
 # 以当前文件为终点的绝对路径
 path = os.path.abspath(os.path.dirname(__file__))
 # 当前文件所在目录的上一级目录
+print(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)))
+# 下面这个有点不保险
 print (os.path.abspath(os.path.dirname(os.path.dirname(__file__))))
 
 

@@ -1,0 +1,5 @@
+Ctrl + A + D  挂起
+Ctrl + A + C 新建窗口
+Ctrl + AA 切换窗口
+screen -r 恢复作业
+screen -ls 查看作业列表
