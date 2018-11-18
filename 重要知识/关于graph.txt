@@ -1,0 +1,16 @@
+
+图表示学习
+
+https://zhuanlan.zhihu.com/p/42022918 网络表示总述
+
+https://zhuanlan.zhihu.com/p/26302789 网络结构中节点潜入向量表达方法介绍
+
+https://www.sohu.com/a/154650431_642762 NE论文小览，附论文和代码
+
+https://zhuanlan.zhihu.com/p/32504175 网络表示学习概述
+
+http://www.hackcha.cn/?p=111 网络节点的表示学习
+
+GNN
+
+https://zhuanlan.zhihu.com/p/38071963 图网络让神经网络也能做因果推理
