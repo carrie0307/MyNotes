@@ -191,3 +191,78 @@ Punctuation: full stops, comma, semicolon, colon
 * when reading academic papers, pay attention to how authors link ideas; thought and arguments.
 
 
+## 4.5 Repeats
+
+**repeat of wordsd is NOT a problem in academic writing. (on the contrary), repeats improve clarity and precision**
+
+|**Sentence 1**  |  **Sentence 2**   | 
+| :----- | :----|
+| passive verb |  -ed adjective |
+| eg. were selected |   selected strain |  
+| eg. was purified |  purified strains |
+
+
+## 4.6 Time adverbials
+
+once, first, next, then, finally
+
+
+## 4.7 -ing clauses
+
+### -ing clauses
+
+* Prices rise, thus **leading** to a decrease in demand.
+
+    * emphasize cause and effect
+
+    * used in combimation with 'thus'(optional)
+    
+    * render your statements more dynamic
+
+    * very common in academic writing
+
+### Examples
+
+* The magma flows into the pores of rocks; as a result, the rocks rupture.
+
+    * The magma flows into the pores of rocks,**thus causing** them to rupture.
+
+* The current is sent through the material. As a result, the electrons are polarized.
+
+    * The current is sent through the material, **thus polarizing** the electrons.
+
+
+### Problem of ambiguity when used -- 2 times in one sentence
+
+**use with CAUTION(~once per sentence)**
+
+## 4.8 Summary Words
+
+THIS/THESE + Summary word
+
+* phrase that summarizes **what has alread been mentioned in the preceding sentence**.
+
+
+### Example 1
+
+ESL lectures konw that students need to understand the differences between formal and informal language. However, **this understanding** cannot be acquired in the short-term, but requires years of continuing reading and writing.
+
+
+### Example 2:
+
+The number of applications has increased steadily, while the number of places has remained constant. **This situation** has resulted in intense competionon for admission.
+
+
+
+### THIS/THESE + Summary word
+
+* **THIS** sometimes used 'unsupported' by noun.
+
+* BEWARE: only do so if it is absolutely clearly what **THIS refers to**!
+
+    * ideally to always support **THIS** with suitable summary noun.
+
+
+### Some summary words
+
+Difficulty, estimation, problem, situation, disruption, finding, process, view, ...

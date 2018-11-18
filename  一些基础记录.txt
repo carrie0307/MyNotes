@@ -12,6 +12,7 @@ Ubuntu18.04下载SUblimetext3并解决中文输入法：https://blog.csdn.net/qq
 
 快线首页 https://kxway.com/ (登陆后：用户中心-桌面浏览器 下载插件)
 快线chrome插件下载链接 https://kxway.com/guide/chrome
+另一个科学上网方式:https://www.jianshu.com/p/aba2d71e8a9c
 
 Axrue下载: http://www.iaxure.com/menupage/download.html
 * Ubuntu 安装Tensorflow - gpu http://blog.csdn.net/zhaoyu106/article/details/52793183

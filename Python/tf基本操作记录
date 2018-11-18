@@ -11,3 +11,6 @@ a2 = [[0.]
      [0.]]
 
 tf.squeeze(a2) = [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+
+tf.concat,tf.stack,tf.unstack
+https://blog.csdn.net/loseinvain/article/details/79638183
