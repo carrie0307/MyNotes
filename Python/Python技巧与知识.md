@@ -452,6 +452,19 @@ t_str = '2012-03-05 16:26:23'
 d = datetime.datetime.strptime(t_str, '%Y-%m-%d %H:%M:%S')
 ```
 
+#### 时间戳转日期
+
+```python
+
+import time
+timeStamp = 1298398417 # 需要是int
+timeArray = time.localtime(timeStamp)
+otherStyleTime = time.strftime("%Y-%m-%d %H:%M:%S", timeArray)
+otherStyletime == "2011-02-23 02:13:37"
+
+```
+
+
 #### 时间运算
 
 * 两个日期相差(天，秒，小时）

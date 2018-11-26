@@ -112,3 +112,6 @@ Create Google API Key https://www.youtube.com/watch?v=bMV_6tmQYDw
 Create Google API ID   https://www.youtube.com/watch?v=vP_inGfKG5E
 How To Get Google Api Key & Search Engine ID Google CSE
 https://www.youtube.com/watch?v=Bxy8Yqp5XX0
+
+
+Foxireader 补丁:https://www.kejixiaoc.com/5981.html#download

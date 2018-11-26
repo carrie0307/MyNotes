@@ -11,6 +11,8 @@ https://zhuanlan.zhihu.com/p/32504175 网络表示学习概述
 
 http://www.hackcha.cn/?p=111 网络节点的表示学习
 
+Node2Vec 论文https://cs.stanford.edu/people/jure/pubs/node2vec-kdd16.pdf
+
 GNN
 
 https://zhuanlan.zhihu.com/p/38071963 图网络让神经网络也能做因果推理
