@@ -4,4 +4,4 @@
 
 * 不要在论文中使用 could, should 
 
-* 
+* 在说...is important...时，要说明为什么Important
