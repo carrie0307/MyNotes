@@ -41,16 +41,41 @@ def batch_yield(data, batch_size):
     :param data:
     :param batch_size:
     """
-    seqs = []
-    for item in data:
+        if labels:
+        data_labels = zip(data, labels)
+        batch_data, batch_labels = [], []
+        for (data_, label_) in data_labels:
+            batch_data.append(data_)
+            batch_labels.append(label_)
 
-        if len(seqs) == batch_size:
-            yield seqs
-            seqs = []
-        seqs.append(item)
+            if len(batch_data) == batch_size:
+                yield batch_data, batch_labels
+                batch_data, batch_labels = [], []
 
-    if len(seqs) != 0:
-        yield seqs
+        if len(batch_data) != 0:
+            yield batch_data, batch_labels
+
+    else:
+        batch_data = []
+        for data_ in data:
+            batch_data.append(data_)
+
+            if len(batch_data) == batch_size:
+                yield batch_data
+                batch_data = []
+
+        if len(batch_data) != 0:
+            yield batch_data
+    # seqs = []
+    # for item in data:
+    #
+    #     if len(seqs) == batch_size:
+    #         yield seqs
+    #         seqs = []
+    #     seqs.append(item)
+    #
+    # if len(seqs) != 0:
+    #     yield seqs
 
 if __name__ == '__main__':
     data = list(range(0,25))
