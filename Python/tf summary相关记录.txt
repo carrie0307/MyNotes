@@ -1,6 +1,7 @@
 可以存的：summary(一般logs目录)、checkpoints(模型),生成的结果(./results)
 
 tensorboard 打开 https://www.cnblogs.com/fydeblog/p/7429344.html
+tensorboard 工作与使用  https://blog.csdn.net/u010099080/article/details/77426577
 多个tevent显示混乱
 
 tf.summary.scalar(name, tensor, collections=None,  family=None) tensor为单一的标量。
@@ -21,3 +22,42 @@ scalar/histogram等操作后...merge...FileWriter...
 每次run的时候需要计算merge后的结果
 writer = tf.summary.FileWriter(your_dir, sess.graph)
 writer.add_summary()
+
+
+tf.summary.merge_all: 将之前定义的所有summary op整合到一起
+
+FileWriter: 创建一个file writer用来向硬盘写summary数据
+
+add_summary仅仅是向FileWriter对象的缓存中存放event data。而向disk上写数据是由FileWrite对象控制的
+
+
+def graphDef():
+
+    ## some other work
+    ## 把一些ops整合到一个name scope下，最后生成的图比较清楚
+    with tf.name_scope("layer_out"):
+        w_o = init_weights([64,2], "w_o")
+        b_o = init_weights([2], "b_o")
+        py_x = tf.nn.softmax(tf.matmul(ho, w_o) + b_o)
+
+    ## 定义图的时候存储一些中间结果
+    tf.summary.histogram('h1/weights',w_2)
+    tf.summary.scalar('loss',cost)
+
+## 定义操作，summary 也是个op 所以后续也需要run
+
+writer = tf.summary.FileWriter('./graph',sess.graph)
+merged = tf.summary.merge_all()
+
+## 合并定义图时的记录操作，并计算
+for i in range(step):
+    ## some other work
+    result = sess.run(merged, feed_dict={X: batchX, Y: batchY})
+    ## 把计算结果和step绑定（用来画图）
+    writer.add_summary(result,i)
+
+writer.close()
+
+以上代码来自 https://zhuanlan.zhihu.com/p/26203726
+
+个人理解：在需要的地方协商tf.summary.scalar等操作，然后在定义session后定义writer和merge的操作，最后在run中执行merged的结果即可。

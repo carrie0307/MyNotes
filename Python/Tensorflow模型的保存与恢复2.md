@@ -28,6 +28,7 @@ saver.save(sess, 'checkpoint_path, global_step=0)所得的filename为model-0
 
 # 注意这里的checkpoint_path要与saver.save中的checkpoint_path一致  "./save/checkpoint/model"
 model_file=tf.train.latest_checkpoint(checkpoint_path)
+saver = tf.train.Saver()
 saver.restore(sess,model_file)
 
 ```

@@ -17,7 +17,7 @@ saver.save(sess,path,global_step=step)
 # 存储后，会生成四个文件：存储网络结构.meta、存储训练好的参数.data和.index、记录最新的模型checkpoint
 
 """模型恢复"""
-
+# saver = tf.train.Saver()
 # 使用tf.train.latest_checkpoint（）来自动获取最后一次保存的模型
 # 这里要指出check_point的目录路径
 model_file_path=tf.train.latest_checkpoint(checkpoint_path)
