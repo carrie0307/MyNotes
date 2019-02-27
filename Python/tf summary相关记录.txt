@@ -1,0 +1,23 @@
+可以存的：summary(一般logs目录)、checkpoints(模型),生成的结果(./results)
+
+tensorboard 打开 https://www.cnblogs.com/fydeblog/p/7429344.html
+多个tevent显示混乱
+
+tf.summary.scalar(name, tensor, collections=None,  family=None) tensor为单一的标量。
+tf.summary.histogram(name, values, collections=None,  family=None) values为任意shape的数字型tensor。
+tf.summary.image(name, tensor, max_outputs=3, collections=None,  family=None) tensor的shape为[batch_size, height, width, channels]，其中channels=1表示灰度图，3表示RGB，4表示RGBA。注意max_outputs默认为3表示每轮默认显示三张图。
+tf.summary.audio( name, tensor, sample_rate, max_outputs=3, collections=None,  family=None) tensor为3D shape [batch_size, frames, channels]，或者2D shape [batch_size, frames]；sample_rate表示声音类型信号tensor的采样率，大小在[-1.0,1.0]之间。
+tf.summary.text(name, tensor, collections=None) 将文本数据转换为string类型的tensor。
+tf.summary.merge(inputs, collections=None, name=None) 将inputs里面的summary汇集在一起，其中inputs为string类型tensor的列表。
+tf.summary.merge_all( key=tf.GraphKeys.SUMMARIES, scope=None) 把所有的summary汇集在一起。
+tf.summary.FileWriter(logdir, sess.graph) 把summary protocol buffers 写进 tfevents文件里。
+tf.summary.tensor_summary( name, tensor, summary_description=None, collections=None, summary_metadata=None, family=None, display_name=None) 将任意shape和类型的tensor序列化，并返回一个string类型的tensor。
+
+
+scalar通常表示单一的量，例如学习率、loss、AP等，而histogram表示的是统计信息，比如梯度、激活值
+
+流程如下？
+scalar/histogram等操作后...merge...FileWriter...
+每次run的时候需要计算merge后的结果
+writer = tf.summary.FileWriter(your_dir, sess.graph)
+writer.add_summary()
