@@ -45,13 +45,16 @@ def graphDef():
     tf.summary.scalar('loss',cost)
 
 ## 定义操作，summary 也是个op 所以后续也需要run
-
-writer = tf.summary.FileWriter('./graph',sess.graph)
+# merge_all 可以将所有summary全部保存到磁盘
 merged = tf.summary.merge_all()
+
+# 由于要用sess.graph,因此writer = tf.summary.FileWriter('./graph',sess.graph)在with session之内
+writer = tf.summary.FileWriter('./graph',sess.graph)
 
 ## 合并定义图时的记录操作，并计算
 for i in range(step):
     ## some other work
+    # result就是merge的执行结果
     result = sess.run(merged, feed_dict={X: batchX, Y: batchY})
     ## 把计算结果和step绑定（用来画图）
     writer.add_summary(result,i)

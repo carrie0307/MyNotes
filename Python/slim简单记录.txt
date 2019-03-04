@@ -1,0 +1,5 @@
+
+slim实际使用可参见《21个项目玩转深度学习-基于Tensorflow的实践详解》第三章，相关代码可以见https://github.com/hzy46/Deep-Learning-21-Examples。 slim中包含了已预训练好的模型，整个使用过程体现了"预训练+Fine Tuning"
+
+但自己在根据书中描述运行实践时，输出信息总是：[INFO tenworflow:sec:0],像是没有训练一样，另外还有疑问：
+1. 用的是imgnet的数据，为什么不用原有的imageNet数据读取代码，而使用copy自flower.py的satellite.py ？？？
