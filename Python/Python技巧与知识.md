@@ -44,6 +44,18 @@ for i in xrange(6):
     print i ** 2
 ```
 
+#### 从列表中分离 zip(\*list)的用法
+
+```python
+>>> li = [(1,'a'),(2,'b'),(3,'b')]
+>>> i,j = zip(li)
+>>> i
+(1, 2, 3)
+>>> j
+('a', 'b', 'b')
+```
+
+
 #### 反向遍历
 ```python
 colors = ['red', 'green', 'blue', 'yellow']

@@ -58,7 +58,15 @@ Ubuntu：
 显卡到底是通过系统更新自动安装还是从官网下载对应版本驱动然后安装？ 循环登录问题是用官网下载方法才存在的吗？ GCC降版本什么意思？
 
 +---------------------------------------------------------------------------------------+
+Win10 Pytorch安装
 
+https://pytorch.org/get-started/locally/ 根据这里官网的指导安装即可。但是这次安装时是已知自己安装了Cuda9.0,以后裸机如何知道要安装什么呢？Pytorch需要cudnn吗？
+
+好像是在cuda官网根据系统可以自动显示所需版本？然后根据系统和cuda版本在cudnn官网选择cudnn???
+
+
+
++---------------------------------------------------------------------------------------+
 Tensorflow资料：
 
 * First Contact With TensorFlow - Jordi Torres - Professor and Researcher at UPC & BSC: Supercomputing for Artificial Intelligence and Deep Learning - http://jorditorres.org/research-teaching/tensorflow/first-contact-with-tensorflow-book/first-contact-with-tensorflow/?utm_source=qq&utm_medium=social

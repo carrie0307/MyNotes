@@ -24,3 +24,19 @@
 
 
 * 阅读三： paper[Deep metric learning using Triplet network](https://arxiv.org/abs/1412.6622)
+
+
+* 阅读四: [tensorflow实现siamese网络-代码](https://blog.csdn.net/qq1483661204/article/details/79039702)
+
+    * 核心操作在于：siamese函数定义网络(input1,input2都用这个网络计算) --->  input1,input2输入网络计算得到output1, output2 ---> seamese_loss计算损失
+
+    * 损失函数步骤
+
+        * 首先用l2范数定义output1和output2之间距离
+
+        * 根据**output1和output2之间距离越小则损失函数值越小**，引入系数L<sub>g,L<sub>1，让L<sub>g满足单调递减,L<sub>1满足单调递增，满足距离和损失函数值间的关系;
+
+
+        * 损失函数要满足的另外一个条件：**同类图片间距离必须比不同类之间的距离小**;此外还有**condition-2**和**condition-3**(见[文中](https://blog.csdn.net/qq1483661204/article/details/79039702)论文截图),得到**最终的损失函数表达式**。siamese_loss函数就是根据损失函数表达式进行计算(代码中的1-y和y是否写反了???)
+
+    * 关于三重损失的疑问：如果input包括三类，分别是pos,neg,norm,一个正常样本(标注样本norm)，一个与标注样本norm同类的样本（正样本P），一个与标注数据不同类的样本（负样本N）。使标注样本A与正样本P的编码之间的距离小于等于A与负样本N的编码之间的距离，就是三重损失了？？？
