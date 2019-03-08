@@ -54,4 +54,77 @@
 
     * https://blog.csdn.net/weixin_42028364/article/details/81675021
 
-    * https://blog.csdn.net/u012436149/article/details/78545766
+
+## torch.bmm
+
+* batch中的矩阵乘法
+
+* https://blog.csdn.net/guotong1988/article/details/78707619
+
+
+## torch.topk
+
+
+* torch.topk(input, k, dim=None, largest=True, sorted=True, out=None) -> (Tensor, LongTensor)
+
+    * 沿给定dim维度返回输入张量input中 k 个最大值。
+
+    * 如果不指定dim，则默认为input的最后一维。
+    
+    * 如果为largest为 False ，则返回最小的 k 个值
+
+
+## torch.transpose
+
+* torch.transpose(input, dim0, dim1, out=None):
+
+    * 返回输入矩阵input的转置，交换维度dim0和dim1。输入张量与输出张量共享内存。
+
+    * input(Tensor) - 输入张量
+    
+    * dim0(int) - 转置的第一维
+    
+    * dim1(int) - 转置的第二维
+
+## torch.save / torch.load
+
+* https://morvanzhou.github.io/tutorials/machine-learning/torch/3-04-save-reload/
+
+## pack_padded_sequence(input, lengths, batch_first=False)与pad_packed_sequence
+
+### rnn.pack_padded_sequence
+
+* 将一个 填充过的变长序列 压紧。（填充时候，会有冗余，所以压紧一下）
+
+* 输入的形状可以是(T×B×* )。T是最长序列长度，B是batch size，*代表任意维度(可以是0)。如果batch_first=True的话，那么相应的 input size 就是 (B×T×*)。
+
+* Variable中保存的序列，应该按序列长度的长短排序，长的在前，短的在后。即input[:,0]代表的是最长的序列，input[:, B-1]保存的是最短的序列。
+
+
+* 参数说明:
+
+   * input (Variable) – 变长序列 被填充后的 batch
+
+   * lengths (list[int]) – Variable 中 每个序列的长度。
+
+   * batch_first (bool, optional) – 如果是True，input的形状应该是B*T*size
+
+### pad_packed_sequence(sequence, batch_first=False)
+
+* 一下内容整理自: https://www.pytorchtutorial.com/docs/package_references/torch-nn/#torchnnutilsrnnpack_padded_sequenceinput-lengths-batch_firstfalsesource
+
+* 上面提到的函数的功能是将一个填充后的变长序列压紧。 这个操作和pack_padded_sequence()是相反的。把压紧的序列再填充回来。
+
+* 返回的Varaible的值的size是 T×B×*, T 是最长序列的长度，B 是 batch_size,如果 batch_first=True,那么返回值是B×T×*。
+
+Batch中的元素将会以它们长度的逆序排列。
+
+* 参数说明:
+
+    * sequence (PackedSequence) – 将要被填充的 batch
+
+    * batch_first (bool, optional) – 如果为True，返回的数据的格式为 B×T×*。
+
+    * 返回值: 一个tuple，包含被填充后的序列，和batch中序列的长度列表。
+
+* 一篇更直观的文章: https://zhuanlan.zhihu.com/p/34418001
