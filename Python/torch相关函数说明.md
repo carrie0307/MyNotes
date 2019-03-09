@@ -11,6 +11,8 @@
 
 ## torch.cat
 
+* https://blog.csdn.net/qq_39709535/article/details/80803003
+
 * https://blog.csdn.net/abc781cba/article/details/79663190
 
 ## torch.stack
@@ -115,7 +117,7 @@
 
 * 上面提到的函数的功能是将一个填充后的变长序列压紧。 这个操作和pack_padded_sequence()是相反的。把压紧的序列再填充回来。
 
-* 返回的Varaible的值的size是 T×B×*, T 是最长序列的长度，B 是 batch_size,如果 batch_first=True,那么返回值是B×T×*。
+* 返回的Varaible的值的size是 T×B×\*, T 是最长序列的长度，B 是 batch_size,如果 batch_first=True,那么返回值是B×T×\*。
 
 Batch中的元素将会以它们长度的逆序排列。
 
@@ -123,8 +125,13 @@ Batch中的元素将会以它们长度的逆序排列。
 
     * sequence (PackedSequence) – 将要被填充的 batch
 
-    * batch_first (bool, optional) – 如果为True，返回的数据的格式为 B×T×*。
+    * batch_first (bool, optional) – 如果为True，返回的数据的格式为 B×T×\*。
 
     * 返回值: 一个tuple，包含被填充后的序列，和batch中序列的长度列表。
 
 * 一篇更直观的文章: https://zhuanlan.zhihu.com/p/34418001
+
+
+### torch自定义损失函数
+
+* https://blog.csdn.net/yutingzhaomeng/article/details/80454807
