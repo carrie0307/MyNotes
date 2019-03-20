@@ -134,4 +134,6 @@ Batch中的元素将会以它们长度的逆序排列。
 
 ### torch自定义损失函数
 
+* https://blog.csdn.net/yutingzhaomeng/article/details/80454545
+
 * https://blog.csdn.net/yutingzhaomeng/article/details/80454807
