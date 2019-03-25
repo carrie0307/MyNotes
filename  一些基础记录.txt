@@ -60,7 +60,7 @@ Ubuntu：
 +---------------------------------------------------------------------------------------+
 Win10 Pytorch安装
 
-https://pytorch.org/get-started/locally/ 根据这里官网的指导安装即可。但是这次安装时是已知自己安装了Cuda9.0,以后裸机如何知道要安装什么呢？Pytorch需要cudnn吗？
+https://pytorch.org/get-started/locally/ 根据这里官网的指导安装即可。但是这次安装时是已知自己安装了Cuda9.0,以后裸机如何知道要安装什么呢？Pytorch需要cudnn吗？(应该是需要的)
 
 好像是在cuda官网根据系统可以自动显示所需版本？然后根据系统和cuda版本在cudnn官网选择cudnn???
 

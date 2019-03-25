@@ -132,3 +132,7 @@ print (X)
 print (train_data[range_features].isnull().any())
 # 查看含有缺失值的行id
 print (train_data[train_data.isnull().values == True])
+
+
+## np.mean
+https://blog.csdn.net/chixujohnny/article/details/51106421
