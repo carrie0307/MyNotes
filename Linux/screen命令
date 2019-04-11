@@ -1,5 +1,28 @@
 Ctrl + A + D  挂起
 Ctrl + A + C 新建窗口
 Ctrl + AA 切换窗口
-screen -r 恢复作业
+screen -r 恢复作业  多个时加上Pid号码
 screen -ls 查看作业列表
+
+先screen进入解码
+然后 Ctrl + A + C 新建窗口
+然后 Ctrl + A + D 挂起 返回原本的界面 (记住screen的id,例如5364.pts-0.ubuntu18)
+之后通过 screen -r 5364.pts-0.ubuntu18 进入对应的screen界面
+然后挂起返回原界面后，screen -S 6475.pts-0.ubuntu18 -X quit  删除screen
+
+推荐一下方法: https://www.cnblogs.com/xiaofoyuan/p/6186919.html
+一、使用Screen创建一个Session
+
+　　screen -S sessionName 注：sessionName是要删除的session名字
+
+二、结束一个Screen创建的session
+
+1、首先使用screen -ls命令查看全部session列表
+
+2、使用screen -S sessionName -X quit, 注：sessionName是要删除的session名字
+
+例如:
+screen -S mytest
+Ctrl + A + D  挂起
+ screen -r mytest (如果执行结束再挂起)
+screen -S mytest -X quit 
