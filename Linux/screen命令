@@ -22,7 +22,15 @@ screen -ls 查看作业列表
 2、使用screen -S sessionName -X quit, 注：sessionName是要删除的session名字
 
 例如:
-screen -S mytest
+screen -S mytest  (然后就进行了对应screen界面，进行相关操作即可)
 Ctrl + A + D  挂起
  screen -r mytest (如果执行结束再挂起)
 screen -S mytest -X quit 
+
+=====================================================
+
+以前用的是nohup
+
+nohup python XXX.py &
+
+
