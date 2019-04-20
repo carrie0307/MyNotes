@@ -1,0 +1,48 @@
+C:\Users\carrie>python
+Python 3.6.6 (v3.6.6:4cf1f54eb7, Jun 27 2018, 03:37:03) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+>>> a = torch.randn(2,3,4)
+>>> a
+tensor([[[ 0.7621, -0.3121,  1.0514,  2.2344],
+         [ 0.9017, -1.5043, -2.4266,  0.7766],
+         [-0.0544, -1.7199,  0.5326, -2.3457]],
+
+        [[-1.8441, -2.0994,  0.5531,  1.5327],
+         [ 0.4589, -1.1690,  0.6501, -0.1026],
+         [ 0.6680, -1.1426, -1.3134,  0.6828]]])
+>>> b = torch.rand(2,3,1)
+>>> z = torch.concat((a,b),2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'torch' has no attribute 'concat'
+>>> z = torch.cat((a,b),2)
+>>> z.shape
+torch.Size([2, 3, 5])
+>>> y = torch.concat((a,b),1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'torch' has no attribute 'concat'
+>>> y = torch.cat((a,b),1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+RuntimeError: invalid argument 0: Sizes of tensors must match except in dimension 1. Got 4 and 1 in dimension 2 at c:\a\w\1\s\windows\pytorch\aten\src\th\generic/THTensorMoreMath.cpp:1307
+>>> c=torch.randn(2,2)
+>>> y = torch.cat((a,c),1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+RuntimeError: invalid argument 0: Tensors must have same number of dimensions: got 3 and 2 at c:\a\w\1\s\windows\pytorch\aten\src\th\generic/THTensorMoreMath.cpp:1298
+>>> c=torch.randn(2,3,1)
+>>> y = torch.cat((a,c),1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+RuntimeError: invalid argument 0: Sizes of tensors must match except in dimension 1. Got 4 and 1 in dimension 2 at c:\a\w\1\s\windows\pytorch\aten\src\th\generic/THTensorMoreMath.cpp:1307
+>>> c=torch.randn(2,3,4)
+>>> y = torch.cat((a,c),1)
+>>> y.shape
+torch.Size([2, 6, 4])
+>>> c=torch.randn(2,2,4)
+>>> y = torch.cat((a,c),1)
+>>> y.shape
+torch.Size([2, 5, 4])
+>>> # 除了cat的那一维度，其他维度要完全一样？？

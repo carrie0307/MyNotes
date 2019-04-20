@@ -1,0 +1,42 @@
+# 信息抽取
+
+* Pytorch关系抽取  已经看过
+    * https://github.com/buppt/ChineseNRE
+
+    问题:"""
+    QUESTION: 1. pod_emb这里不是很理解
+              2. hidden_size为什么要hidden_dim//2 ???
+              3. embeds的concat操作 (为什么这样?简单concat可以包含到位置信息吗??)
+              4. 这个attention怎么算的???
+              5. 怎么做多关系预测???  https://github.com/buppt/ChineseNRE/issues/5
+              6. 为什么没有做实体识别???
+              7. self.hidden2tag 没有用???
+              8. max_len=1 ???
+              9. position_padding什么意思???
+
+              * 测试的时候怎么知道是哪几个实体构成什么关系呢？？？ 每有做实体识别吗?? pos_id是建立在已知head和tail的情况下，具体用其他测试数据也是吗？？     
+
+     """
+
+* GRU关系抽取
+
+    * https://github.com/crownpku/Information-Extraction-Chinese/tree/master/RE_BGRU_2ATT
+
+* Joint-Extraction-of-Entities-and-Relations-Based-on-a-Novel-Tagging-Scheme
+
+    * code: https://github.com/gswycf/Joint-Extraction-of-Entities-and-Relations-Based-on-a-Novel-Tagging-Scheme/blob/master/data/NYT_CoType/corpus.txt
+
+    * ppt: http://t.cn/RXmunzm
+
+    * 相关讲解: https://unordered.org/timelines/59cd311916c01000
+
+    * 这种方法省略了**先NER, 后预测关系类型**的做法，而是在原始巡礼数据中就标注了**哪个实体是哪种关系下的head or tail**。例如，United States的标识分别是B-CP-1,I-CP-1,说明它们分别是CP关系的head的B和I,Trucp的标注是S-CP-2,说明它是CP关系的tail且是single的。**由此完全将关系抽取问题转化为了序列标注问题**。(tag2id.txt中给出了B/I/E/S-R-i对应的序号, relation_labels是关系名称对应序号)
+
+    * 疑问是:github代码似乎不对应??Encoder部分没有体现出BiLSTM的部分。
+
+* 关系抽取分类总结: https://shomy.top/2018/02/28/relation-extraction/
+
+* 一篇很好的总结: https://unordered.org/timelines/59cd311916c01000
+
+
+* 一篇总结: https://zhuanlan.zhihu.com/p/44772023
