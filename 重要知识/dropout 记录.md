@@ -33,11 +33,6 @@ dropout_rate属于超参数，一般输入层dropout比较少，dropout rate是0
 
 #### 一下内容整理自[Pytorch调整学习率的六种方法](https://blog.csdn.net/shanglianlm/article/details/85143614)
 
-* 问题:torch.optim.lr_scheduler需要用zero_grad吗? scheduler.step()是不是要放在train函数前面?
-
-* 等间隔调整学习率StepLR
-last_epoch什么意思???
-
 ```python
 torch.optim.lr_scheduler.StepLR(optimizer, step_size, gamma=0.1, last_epoch=-1)
 
@@ -130,24 +125,88 @@ optimizer.step() 每个mini_batch后
 
 ## 梯度裁剪 clip
 
-限制最大梯度，如果梯度达到最大阈值则让它根据衰减系数衰减。
+* [梯度裁剪及其作用](https://wulc.me/2018/05/01/%E6%A2%AF%E5%BA%A6%E8%A3%81%E5%89%AA%E5%8F%8A%E5%85%B6%E4%BD%9C%E7%94%A8/)
 
-## 优化函数
+### 什么是梯度裁剪？作用？？？
+
+梯度裁剪用于解决**梯度爆炸**问题,具体操作是**限制最大梯度，如果梯度达到最大阈值则让它根据衰减系数衰减**。
+
+### 什么地方梯度裁剪？
+
+### 裁剪多少???
+
+### 怎么裁剪???
+
+Pytorch中梯度裁剪通过clip_grad进行,函数文档[clip_grad_norm](https://pytorch.org/docs/stable/_modules/torch/nn/utils/clip_grad.html),其中参数[含义](https://www.cnblogs.com/lindaxin/p/7998196.html)为:
+
+```
+parameters (Iterable[Variable]) – 一个基于变量的迭代器，会进行归一化（原文：an iterable of Variables that will have gradients normalized）
+
+max_norm (float or int) – 梯度的最大范数（原文：max norm of the gradients）
+
+norm_type(float or int) – 规定范数的类型，默认为L2（原文：type of the used p-norm. Can be'inf'for infinity norm）
+
+Returns:参数的总体范数（作为单个向量来看）（原文：Total norm of the parameters (viewed as a single vector).）
+```
+
+```python
+
+optimizer.zero_grad()        
+loss, hidden = model(data, hidden, targets)
+loss.backward()
+# clip应该是多少???
+torch.nn.utils.clip_grad_norm(model.parameters(), clip)
+optimizer.step()
+```
+
 
 ## 初始化
 
 
-uniform均匀分布初始化：
+* [torch.nn.init - source code](https://pytorch.org/docs/stable/_modules/torch/nn/init.html)
+
+* [torch.nn.init - doc](https://pytorch.org/docs/stable/nn.html#torch-nn-init)
+
+
+* [知乎:萧瑟](https://www.zhihu.com/question/41631631/answer/94816420)
+
+    * uniform均匀分布初始化：
+```
 w = np.random.uniform(low=-scale, high=scale, size=[n_in,n_out])
 Xavier初始法，适用于普通激活函数(tanh,sigmoid)：scale = np.sqrt(3/n)He初始化，适用于ReLU：scale = np.sqrt(6/n)normal高斯分布初始化：
+```
+    * normal正态分布初始化
+```
 w = np.random.randn(n_in,n_out) * stdev # stdev为高斯分布的标准差，均值设为0
 Xavier初始法，适用于普通激活函数 (tanh,sigmoid)：stdev = np.sqrt(n)He初始化，适用于ReLU：stdev = np.sqrt(2/n)
+```
 
-uniform和normal初始化的xavier初始化不同嘛???
-以上初始化部分内容摘自[知乎:萧瑟](https://www.zhihu.com/question/41631631/answer/94816420)
+* [一个样例初始化函数](https://github.com/ShomyLiu/pytorch-pcnn/blob/e1c95ed6bef369f08550043f79779f1d301dd236/models/PCNN.py#L42)
+
+```python
+
+def init_model_weight(self):
+        '''
+        use xavier to init
+        '''
+        # nn.init.xavier_normal_(self.cnn_linear.weight)
+        # nn.init.constant_(self.cnn_linear.bias, 0.)
+        nn.init.xavier_normal_(self.out_linear.weight)
+        nn.init.constant_(self.out_linear.bias, 0.)
+        # for conv in self.convs:
+        #     nn.init.xavier_normal_(conv.weight)
+        #     nn.init.constant_(conv.bias, 0)
+
+```
+
+以上初始化部分内容摘自
 
 
 ## 归一化
+
+## 正则化
+
+## 优化函数
 
 ## 其他阅读
 
