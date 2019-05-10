@@ -125,17 +125,67 @@ optimizer.step() 每个mini_batch后
 
 ## 梯度裁剪 clip
 
+### [浅谈神经网络中的梯度爆炸问题](https://zhuanlan.zhihu.com/p/32154263)
+
+    * 梯度爆炸会引发哪些问题: 导致网络不稳定，无法从训练数据中进行正常学习
+
+    * 怎么知道**是否出现了梯度爆炸？**
+
+        * 模型无法在训练数据上收敛(比如，损失函数值非常差)
+
+        * 模型不稳定(在更新的时候损失有较大的变化)
+
+        * 模型的损失函数值在训练过程中变为NaN
+
+    * 不太明显的判断梯度爆炸的方法:
+
+        * 模型在训练过程中，**权重变化非常大**
+
+        * 模型训练过程中，**权重变成NaN值**
+
+        * 每层的每个节点在训练时，其误差梯度一直是大于1.0
+
+    * 解决方法
+
+        * 修正网络结构
+
+        * 使用Relu做激活函数
+
+        * 梯度裁剪
+
+### [理解梯度下降](http://liuchengxu.org/blog-cn/posts/dive-into-gradient-decent/)
+
+* 梯度的**范数**：某一点处的方向导数在其梯度方向上达到**最大值，此最大值即梯度的范数**
+
+* [警惕!Loss为Nan或超级大的原因](https://oldpan.me/archives/careful-train-loss-nan-inf)
+
 * [梯度裁剪及其作用](https://wulc.me/2018/05/01/%E6%A2%AF%E5%BA%A6%E8%A3%81%E5%89%AA%E5%8F%8A%E5%85%B6%E4%BD%9C%E7%94%A8/)
 
-### 什么是梯度裁剪？作用？？？
+### Pytorch 梯度裁剪
+
+* [Pytorch梯度裁剪](https://www.cnblogs.com/lindaxin/p/7998196.html)
+
+* [神经网络调参细节](https://yq.aliyun.com/articles/610082/)
+
+```python
+for batch in text_batch_list:
+
+    model.train()
+
+    optimizer.zero_grad()
+    """
+    其他常规操作
+    """
+    if self.clip_grad:
+        torch.nn.utils.clip_grad_norm(model.parameters, 10)
+
+    
+
+```
 
 梯度裁剪用于解决**梯度爆炸**问题,具体操作是**限制最大梯度，如果梯度达到最大阈值则让它根据衰减系数衰减**。
 
-### 什么地方梯度裁剪？
 
-### 裁剪多少???
-
-### 怎么裁剪???
 
 Pytorch中梯度裁剪通过clip_grad进行,函数文档[clip_grad_norm](https://pytorch.org/docs/stable/_modules/torch/nn/utils/clip_grad.html),其中参数[含义](https://www.cnblogs.com/lindaxin/p/7998196.html)为:
 
@@ -162,6 +212,7 @@ optimizer.step()
 
 ## 初始化
 
+* 初始化非常重要，参数的初始化会影响**是否能够收敛**以及**收敛的速度**
 
 * [torch.nn.init - source code](https://pytorch.org/docs/stable/_modules/torch/nn/init.html)
 
@@ -171,11 +222,13 @@ optimizer.step()
 * [知乎:萧瑟](https://www.zhihu.com/question/41631631/answer/94816420)
 
     * uniform均匀分布初始化：
+    
 ```
 w = np.random.uniform(low=-scale, high=scale, size=[n_in,n_out])
 Xavier初始法，适用于普通激活函数(tanh,sigmoid)：scale = np.sqrt(3/n)He初始化，适用于ReLU：scale = np.sqrt(6/n)normal高斯分布初始化：
 ```
     * normal正态分布初始化
+
 ```
 w = np.random.randn(n_in,n_out) * stdev # stdev为高斯分布的标准差，均值设为0
 Xavier初始法，适用于普通激活函数 (tanh,sigmoid)：stdev = np.sqrt(n)He初始化，适用于ReLU：stdev = np.sqrt(2/n)
@@ -199,16 +252,154 @@ def init_model_weight(self):
 
 ```
 
-以上初始化部分内容摘自
+* 使用nn.Parameter()的初始化
+
+* nn.Parameter()可以直接给权重矩阵进行特殊的初始化，例如
+
+```python
+self.out_linear.weight = torch.nn.Parameter(torch.ones(in_dim, out_dim))
+self.out_linear.bias = torch.nn.Parameter(torch.ones(out_dim))
+```
+
+* 在Attention中使用nn.Parameter()初始化
+
+    * 例1: https://www.jianshu.com/p/d8b77cc02410
+
+    * 例2： https://pytorch.org/tutorials/beginner/chatbot_tutorial.html
+    ```python
+    self.v = nn.Parameter(torch.FloatTensor(hidden_size))
+    ```
+* nn.Parameter()默认**requires_grad=True**,见[中文文档](https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch-nn/)
+
+## Batch_norm (归一化/标准化)
+
+### [深度学习中Batch Normalization为什么效果好](https://www.zhihu.com/question/38102762)
+
+* BN的好处 - [知乎:龙鹏-言有三](https://www.zhihu.com/question/38102762/answer/607815171)
+
+    * 减轻了对**参数初始化的依赖**，这是**利于调参**
+
+    * **训练更快**，可以使用更高的学习率。
+
+    * BN一定程度上增加了**泛化能力，dropout等技术可以去掉**
+
+* BN的缺陷 - [知乎:龙鹏-言有三](https://www.zhihu.com/question/38102762/answer/607815171)
+
+batch normalization依赖于batch的大小，**当batch值很小时，计算的均值和方差不稳定**。研究表明对于ResNet类模型在ImageNet数据集上，batch从16降低到8时开始有非常明显的性能下降，在训练过程中计算的均值和方差不准确，而在测试的时候使用的就是训练过程中保持下来的均值和方差。这一个特性，导致batch normalization不适合以下的几种场景:
+
+    * batch非常小，比如训练资源有限无法应用较大的batch，也比如在线学习等使用单例进行模型参数更新的场景。
+
+    * rnn，因为它是一个动态的网络结构，同一个batch中训练实例有长有短，导致每一个时间步长必须维持各自的统计量，这使得BN并不能正确的使用。在rnn中，对bn进行改进也非常的困难。不过，困难并不意味着没人做，事实上现在仍然可以使用的，不过这超出了咱们初识境的学习范围
 
 
-## 归一化
+* 什么时候使用Batch_norm？
+
+例如，在神经网络训练时遇到收敛速度很慢，或梯度爆炸等无法训练的状况时可以尝试BN来解决。另外，在一般使用情况下也可以加入BN来加快训练速度，提高模型精度
+
+### pytorch中Batch_norm
+
+* batchnorm1d和batchnorm2d什么区别???
+
+    * torch.nn.BatchNorm1d(num_features): Applies Batch Normalization over a 2D or 3D input 
+    * num_features： 来自期望输入的特征数，该期望输入的大小为'batch_size x num_features [x width]'
+    * 输入：（N, C）或者(N, C, L)
+    * 输出：（N, C）或者（N，C，L） (输入输出相同,C就相当于num_features)
+
+
+    *  torch.nn.BatchNorm2d(num_features): Applies Batch Normalization over a 4D input
+    * num_features： 来自期望输入的特征数，该期望输入的大小为'batch_size x num_features x height x width
+    * 输入：（N, C，H, W) - 输出：（N, C, H, W）(输入输出相同,C就相当于num_features)
+
+### 什么位置添加BN
+
+* [CNN RNN哪里添加BN](https://blog.csdn.net/malefactor/article/details/51549771)
+
+    * RNN可以考虑横向或纵向，横向没有细致研究，纵向可以尝试在最后的线性输出前添加batch_norm。
+
+    * CNN是在卷积后? 卷积后一个feature map的结果就相当于一个神经元，将输出feature_map数量作为num_features进行bn (https://blog.csdn.net/hjimce/article/details/50866313)
+
+
+## 动量
+
+* 参考1:https://blog.csdn.net/u013989576/article/details/70241121
+
+* 参考2：https://www.jqr.com/article/000505
+
+动量法不仅使用当前的梯度，同时还利用之前的梯度提供的信息
+
+* 参考3: https://zh.gluon.ai/chapter_optimization/momentum.html
+
+当动量参数(momentum factor)γ=0s时,**动量法等价于小批量随机梯度下降**。
+
+
+## 优化函数
+
+### [深度学习最全优化方法总结比较]
+
+weight_decay是类似L2的实现
+
+#### SGD
+
+```python
+torch.optim.SGD(params, lr=<required parameter>, momentum=0, dampening=0, weight_decay=0, nesterov=False)
+```
+
+* 普通的随机梯度下降
+
+* 缺点
+
+    * **learning_rate的选择较为困难**
+
+    * 容易收敛到**局部最优**，某些情况下可能被困在**鞍点**
+
+    * 因此引入了**动量**,动量法不仅使用当前的梯度，同时还利用之前的梯度提供的信息
+
+#### AdaGrad
+
+```python
+torch.optim.Adagrad(params, lr=0.01, lr_decay=0, weight_decay=0, initial_accumulator_value=0)
+```
+
+* AdaGrad是对学习率进行了**约束**
+
+
+#### Adadelta
+
+```python
+torch.optim.Adadelta(params, lr=1.0, rho=0.9, eps=1e-06, weight_decay=0)
+```
+Adadelta是对Adagrad的拓展，仍然是对学习率的自适应约束，但是计算上进行了简化。
+
+
+#### RMSprop
+
+```python
+torch.optim.RMSprop(params, lr=0.01, alpha=0.99, eps=1e-08, weight_decay=0, momentum=0, centered=False)
+```
+
+RMSprop可以看作Adadelta的一个特例
+
+#### Adam
+
+```python
+torch.optim.Adam(params, lr=0.001, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
+```
+
+Adam本质上是带有动量项的RMSprop
+
 
 ## 正则化
 
-## 优化函数
+* [Pytorch中的L2和L1正则化](https://blog.csdn.net/LoseInVain/article/details/81708474)
+
+在pytorch中，通过torch.optim.optimizer的weight_decay参数实现L2，但这会对所有参数都进行L2惩罚。
+
+如果要实现L1, 则需要另外写代码。
 
 ## 其他阅读
 
 * [A Recipe for Training Neural Netowrks](https://karpathy.github.io/2019/04/25/recipe/)
 
+* [神经网络调参细节](https://yq.aliyun.com/articles/610082/)
+
+* [深度网络调参技巧](https://zhuanlan.zhihu.com/p/24720954)
