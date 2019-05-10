@@ -72,3 +72,12 @@ cudnn.deterministic = True
 
 * named_parameters() 是给出网络层的名字和参数的迭代器
 * parameters()会给出一个网络的全部参数的选代器
+
+## masked_fill
+
+* 文档https://pytorch-cn.readthedocs.io/zh/latest/package_references/Tensor/
+
+masked_fill_(mask, value)
+在mask值为1的位置处用value填充。mask的元素个数需和本tensor相同，但尺寸可以不同。
+
+* 实例:https://blog.csdn.net/candy134834/article/details/84594754
