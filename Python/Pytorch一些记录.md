@@ -81,3 +81,12 @@ masked_fill_(mask, value)
 在mask值为1的位置处用value填充。mask的元素个数需和本tensor相同，但尺寸可以不同。
 
 * 实例:https://blog.csdn.net/candy134834/article/details/84594754
+
+
+## torch.matmul(tensor1,tensor2,out=None)
+
+* 文档: https://pytorch.org/docs/stable/torch.html#torch.matmul
+
+* 如果tensor1和tensor2都是一维，则进行点乘操作
+
+* 如果tensor1和tensor2都是二维，则进行矩阵乘法，类似torch.mm

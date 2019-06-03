@@ -275,6 +275,8 @@ self.out_linear.bias = torch.nn.Parameter(torch.ones(out_dim))
 
 ### [深度学习中Batch Normalization为什么效果好](https://www.zhihu.com/question/38102762)
 
+* [BatchNorm原理解释](https://www.cnblogs.com/guoyaohua/p/8724433.html)
+
 * BN的好处 - [知乎:龙鹏-言有三](https://www.zhihu.com/question/38102762/answer/607815171)
 
     * 减轻了对**参数初始化的依赖**，这是**利于调参**
