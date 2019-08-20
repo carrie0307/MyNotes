@@ -1,0 +1,4 @@
+使用 pipreqs生成requirements
+
+
+https://blog.csdn.net/orangleliu/article/details/60958525

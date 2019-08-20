@@ -1,0 +1,19 @@
+假设DockerFile就在当前目录./下，则进行创建容器并运行的命令包括:
+
+1. 创建:docker build -t tag/name ./
+例如: docker build -t igservice/keysource
+在有requirements时，打包容器时会自动进行相关依赖的安装
+
+2. 运行: docker run -itd tag/name
+例如: docker run -itd igservice/keysource 其中'd'表示后台运行
+
+3. 查看运行: docker container ls
+
+4. 进入某容器: docker exec -it tag/name bash
+例如: docker exec -itd igservice/keysource bash
+
+--shm-size 设置共享内存(大致这个意思)
+
+5. 退出容器: https://blog.csdn.net/LEoe_/article/details/78685186
+
+方法一：如果要正常退出不关闭容器，请按Ctrl+P+Q进行退出容器

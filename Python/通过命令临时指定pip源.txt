@@ -1,0 +1,6 @@
+临时指定pip源路径,无需配置pip源(https://blog.csdn.net/daijiguo/article/details/78085603)
+
+pip install pythonModuleName -i https://pypi.douban.com/simple
+
+其他源: http://mirrors.aliyun.com/pypi/simple/
+       http://pypi.mirrors.ustc.edu.cn/simple/ 

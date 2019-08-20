@@ -1,0 +1,16 @@
+
+## 通过修改js参数避免被识别出是driver驱动的
+
+### 方法一: option设置
+
+* https://juejin.im/post/5c62b6d5f265da2dab17ae3c
+* 缺点: headless的情况下没有作用
+
+### 方法二: 使用mitmproxy
+
+* https://www.jianshu.com/p/304f4dfae0bb
+
+
+## 反爬:公网用户区别
+
+* https://security.stackexchange.com/questions/81302/how-to-uniquely-identify-users-with-the-same-external-ip-address
