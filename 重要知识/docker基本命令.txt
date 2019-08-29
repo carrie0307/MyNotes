@@ -6,13 +6,15 @@
 
 2. 运行: docker run -itd tag/name
 例如: docker run -itd igservice/keysource 其中'd'表示后台运行
+--shm-size 设置共享内存(大致这个意思)
+--restart unless-stopped docker服务重启时自动运行
 
 3. 查看运行: docker container ls
 
-4. 进入某容器: docker exec -it tag/name bash
-例如: docker exec -itd igservice/keysource bash
+4. 进入某容器: docker exec -it container_id bash
+例如: docker exec -it igservice/keysource bash
 
---shm-size 设置共享内存(大致这个意思)
+
 
 5. 退出容器: https://blog.csdn.net/LEoe_/article/details/78685186
 

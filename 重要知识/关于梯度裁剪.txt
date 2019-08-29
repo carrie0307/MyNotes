@@ -1,0 +1,4 @@
+
+* 梯度裁剪及其作用: https://wulc.me/2018/05/01/%E6%A2%AF%E5%BA%A6%E8%A3%81%E5%89%AA%E5%8F%8A%E5%85%B6%E4%BD%9C%E7%94%A8/
+
+* 浅谈梯度爆炸问题: https://zhuanlan.zhihu.com/p/32154263
