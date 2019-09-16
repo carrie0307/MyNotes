@@ -1,0 +1,12 @@
+# 关于weight_decay
+
+用于处理过拟合问题
+
+* http://5zixu.com/2016/12/06/optimization_and_generalization/
+
+Generalization
+
+regularization: 常用L1范数，L2范数等，L1范数会使权重稀疏，无关特征权重等于0，增强的可解释性，可用于特征选择；L2范数无关特征权重趋向于0
+
+* https://blog.csdn.net/program_developer/article/details/80867468
+
