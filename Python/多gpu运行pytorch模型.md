@@ -76,9 +76,10 @@ def load_GPUS(model,model_path,kwargs):
 
 ```
 
-* 单卡训练与保存，多卡加载
+* 单GPU训练与保存，多GPU加载
 
-参数名问题可以参照**多卡-单卡**的情况进行处理，但是map_location怎么写?直接写```map_location=目标device```吗?
+自己测试后发现，将参数名添加上".module", map_location可以不写
+
 
 * 多卡训练与保存，多卡加载
 
