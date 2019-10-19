@@ -4,6 +4,12 @@
 
 * [BERT与后时代NLP](https://mp.weixin.qq.com/s/U_pYc5roODcs_VENDoTbiQ)
 
+* [赛尔笔记(SCIR) | 自然语言处理中的迁移学习(上)](https://mp.weixin.qq.com/s/G-Z6zyYSV95--x0PjQVMiw)
+
+* [预训练语言模型关系图+必读论文列表，清华荣誉出品](https://mp.weixin.qq.com/s/-U_Lu2MMr5QRNe1xpv-_Xg)
+
+* [ACL2019: 知识图谱结合Bert](https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2650762696&idx=4&sn=70c25ea24d15ed53880f45c511938813&chksm=871aa9b6b06d20a0536c7602a5757e28f995600bdffdd52ccb791927ba17aaaa10bfc15a209d&scene=21#wechat_redirect)
+
 * [从Attention到Bert:NLP前沿技术](http://www.bdpt.net/cn/2019/01/22/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF-%E4%BB%8Eattentiontransformerelmogpt%E5%88%B0bert/)
 
 * [Bert使用详解](https://juejin.im/post/5c6d65a56fb9a04a0f65c45d)
